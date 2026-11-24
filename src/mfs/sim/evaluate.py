@@ -123,7 +123,7 @@ def twin_drift(site: Site, run: Run) -> dict[str, Any] | None:
     out: dict[str, Any] = {"threshold": thr, "daily_twin_error": daily, "daily_calibrated_error": daily_cal}
     if drift:
         g, start_day = drift["gpu"], int(drift["from_hour"]) // 24
-        series = daily.get(g, [])
+        series = daily.get(g) or [None] * days  # a GPU type with no replicas has no measurements to compare
         fired = next((d for d in range(start_day, days) if (series[d] or 0) > thr), None)
         out["drift_gpu"] = g
         out["alarm_days_after_change"] = None if fired is None else fired - start_day

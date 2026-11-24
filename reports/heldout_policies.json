@@ -1,0 +1,10602 @@
+{
+ "split": "heldout_policies",
+ "variant": "heldout",
+ "seeds": [
+  5201,
+  5202,
+  5203
+ ],
+ "designs": {
+  "uniform": {
+   "requests": 1924087318.55394,
+   "attainment": 0.59153,
+   "violated_share": 0.40847,
+   "shed_share": 0.0,
+   "bad_service_hours": 2084,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.65027,
+   "met_per_gpu_hour": 18092.47526,
+   "crashes": 7800,
+   "tpot_misses": 572,
+   "overloads": 2022,
+   "replica_starts_per_day": 131.71429,
+   "fallback_share": 0.0,
+   "drift_events": 0,
+   "drift_window_attainment": 0.59701,
+   "drift_recovery_hours": null,
+   "train_points": 0,
+   "training_jobs": 108,
+   "training_done_share": 0.9537,
+   "training_job_hours": 33.96155,
+   "training_tokens_b": 42.01808,
+   "training_net_tokens_b": 41.28721,
+   "training_gpu_share": 0.17047,
+   "training_preemptions": 176,
+   "training_crashes": 4,
+   "fleet_busy": 0.82075,
+   "cap_serving": 0.52559,
+   "cap_inference_headroom": 0.12468,
+   "cap_training_kept": 0.16617,
+   "cap_training_lost_to_preemption": 0.00376,
+   "cap_training_out_of_memory": 0.00054,
+   "cap_stranded_job_fit_but_waited": 0.02615,
+   "cap_stranded_too_few_gpus_free": 0.05874,
+   "cap_stranded_no_job_fits_memory": 0.02547,
+   "cap_idle_nothing_queued": 0.06891
+  },
+  "roofline": {
+   "requests": 1924087318.55394,
+   "attainment": 0.54034,
+   "violated_share": 0.45966,
+   "shed_share": 0.0,
+   "bad_service_hours": 1328,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.23048,
+   "met_per_gpu_hour": 46584.43929,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 5751,
+   "replica_starts_per_day": 76.38095,
+   "fallback_share": 0.0,
+   "drift_events": 0,
+   "drift_window_attainment": 0.42161,
+   "drift_recovery_hours": 52.66667,
+   "train_points": 0,
+   "training_jobs": 108,
+   "training_done_share": 0.92592,
+   "training_job_hours": 34.8306,
+   "training_tokens_b": 40.81827,
+   "training_net_tokens_b": 40.58988,
+   "training_gpu_share": 0.33111,
+   "training_preemptions": 41,
+   "training_crashes": 0,
+   "fleet_busy": 0.56159,
+   "cap_serving": 0.1818,
+   "cap_inference_headroom": 0.04868,
+   "cap_training_kept": 0.33026,
+   "cap_training_lost_to_preemption": 0.00085,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.00461,
+   "cap_stranded_too_few_gpus_free": 0.0079,
+   "cap_stranded_no_job_fits_memory": 0.02174,
+   "cap_idle_nothing_queued": 0.40415
+  },
+  "roofline_calibrated": {
+   "requests": 1924087318.55394,
+   "attainment": 0.9449,
+   "violated_share": 0.01021,
+   "shed_share": 0.04489,
+   "bad_service_hours": 337,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.27721,
+   "met_per_gpu_hour": 68071.941,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 71,
+   "replica_starts_per_day": 102.19048,
+   "fallback_share": 0.0,
+   "drift_events": 20,
+   "drift_window_attainment": 0.93466,
+   "drift_recovery_hours": 1.0,
+   "train_points": 0,
+   "training_jobs": 108,
+   "training_done_share": 0.83333,
+   "training_job_hours": 40.22475,
+   "training_tokens_b": 39.25652,
+   "training_net_tokens_b": 38.95984,
+   "training_gpu_share": 0.33071,
+   "training_preemptions": 67,
+   "training_crashes": 0,
+   "fleet_busy": 0.60792,
+   "cap_serving": 0.21276,
+   "cap_inference_headroom": 0.06445,
+   "cap_training_kept": 0.32915,
+   "cap_training_lost_to_preemption": 0.00156,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.02072,
+   "cap_stranded_too_few_gpus_free": 0.0427,
+   "cap_stranded_no_job_fits_memory": 0.11095,
+   "cap_idle_nothing_queued": 0.21771
+  },
+  "platform": {
+   "requests": 1924087318.55394,
+   "attainment": 0.952,
+   "violated_share": 0.00276,
+   "shed_share": 0.04524,
+   "bad_service_hours": 306,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.29658,
+   "met_per_gpu_hour": 63895.36734,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 9,
+   "replica_starts_per_day": 102.42857,
+   "fallback_share": 0.28652,
+   "drift_events": 5,
+   "drift_window_attainment": 0.93386,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.84259,
+   "training_job_hours": 43.88262,
+   "training_tokens_b": 38.71419,
+   "training_net_tokens_b": 38.43929,
+   "training_gpu_share": 0.35493,
+   "training_preemptions": 70,
+   "training_crashes": 0,
+   "fleet_busy": 0.6515,
+   "cap_serving": 0.22797,
+   "cap_inference_headroom": 0.0686,
+   "cap_training_kept": 0.35337,
+   "cap_training_lost_to_preemption": 0.00156,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.01939,
+   "cap_stranded_too_few_gpus_free": 0.04039,
+   "cap_stranded_no_job_fits_memory": 0.09731,
+   "cap_idle_nothing_queued": 0.19141
+  },
+  "with_margin": {
+   "requests": 1924087318.55394,
+   "attainment": 0.9508,
+   "violated_share": 0.00219,
+   "shed_share": 0.04701,
+   "bad_service_hours": 325,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.36329,
+   "met_per_gpu_hour": 52138.89552,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 13,
+   "replica_starts_per_day": 114.19048,
+   "fallback_share": 0.20282,
+   "drift_events": 12,
+   "drift_window_attainment": 0.92973,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.75,
+   "training_job_hours": 50.734,
+   "training_tokens_b": 36.88223,
+   "training_net_tokens_b": 36.49287,
+   "training_gpu_share": 0.32671,
+   "training_preemptions": 113,
+   "training_crashes": 0,
+   "fleet_busy": 0.69,
+   "cap_serving": 0.28237,
+   "cap_inference_headroom": 0.08092,
+   "cap_training_kept": 0.32428,
+   "cap_training_lost_to_preemption": 0.00243,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.04157,
+   "cap_stranded_too_few_gpus_free": 0.05059,
+   "cap_stranded_no_job_fits_memory": 0.11291,
+   "cap_idle_nothing_queued": 0.10493
+  },
+  "no_fallback": {
+   "requests": 1924087318.55394,
+   "attainment": 0.94885,
+   "violated_share": 0.0056,
+   "shed_share": 0.04555,
+   "bad_service_hours": 355,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.28686,
+   "met_per_gpu_hour": 65835.53923,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 39,
+   "replica_starts_per_day": 106.71428,
+   "fallback_share": 0.0,
+   "drift_events": 5,
+   "drift_window_attainment": 0.9291,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.81481,
+   "training_job_hours": 43.10533,
+   "training_tokens_b": 38.30854,
+   "training_net_tokens_b": 38.004,
+   "training_gpu_share": 0.34009,
+   "training_preemptions": 71,
+   "training_crashes": 0,
+   "fleet_busy": 0.62695,
+   "cap_serving": 0.22184,
+   "cap_inference_headroom": 0.06503,
+   "cap_training_kept": 0.33838,
+   "cap_training_lost_to_preemption": 0.00171,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.02377,
+   "cap_stranded_too_few_gpus_free": 0.04321,
+   "cap_stranded_no_job_fits_memory": 0.11814,
+   "cap_idle_nothing_queued": 0.18794
+  },
+  "no_feedback": {
+   "requests": 1924087318.55394,
+   "attainment": 0.91583,
+   "violated_share": 0.03674,
+   "shed_share": 0.04743,
+   "bad_service_hours": 450,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.2981,
+   "met_per_gpu_hour": 61133.80509,
+   "crashes": 0,
+   "tpot_misses": 6,
+   "overloads": 569,
+   "replica_starts_per_day": 96.19048,
+   "fallback_share": 0.28854,
+   "drift_events": 0,
+   "drift_window_attainment": 0.88376,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.83334,
+   "training_job_hours": 42.6144,
+   "training_tokens_b": 39.33562,
+   "training_net_tokens_b": 39.01985,
+   "training_gpu_share": 0.3375,
+   "training_preemptions": 82,
+   "training_crashes": 0,
+   "fleet_busy": 0.63561,
+   "cap_serving": 0.23076,
+   "cap_inference_headroom": 0.06735,
+   "cap_training_kept": 0.33563,
+   "cap_training_lost_to_preemption": 0.00187,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.02167,
+   "cap_stranded_too_few_gpus_free": 0.04386,
+   "cap_stranded_no_job_fits_memory": 0.11235,
+   "cap_idle_nothing_queued": 0.18651
+  },
+  "no_admission": {
+   "requests": 1924087318.55394,
+   "attainment": 0.82924,
+   "violated_share": 0.17076,
+   "shed_share": 0.0,
+   "bad_service_hours": 355,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.28768,
+   "met_per_gpu_hour": 57415.18768,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 1876,
+   "replica_starts_per_day": 101.42857,
+   "fallback_share": 0.28082,
+   "drift_events": 8,
+   "drift_window_attainment": 0.77075,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.81482,
+   "training_job_hours": 42.93208,
+   "training_tokens_b": 38.90177,
+   "training_net_tokens_b": 38.62089,
+   "training_gpu_share": 0.32789,
+   "training_preemptions": 62,
+   "training_crashes": 0,
+   "fleet_busy": 0.61557,
+   "cap_serving": 0.22809,
+   "cap_inference_headroom": 0.05959,
+   "cap_training_kept": 0.32639,
+   "cap_training_lost_to_preemption": 0.0015,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.02239,
+   "cap_stranded_too_few_gpus_free": 0.04688,
+   "cap_stranded_no_job_fits_memory": 0.13219,
+   "cap_idle_nothing_queued": 0.18296
+  },
+  "naive_backfill": {
+   "requests": 1924087318.55394,
+   "attainment": 0.952,
+   "violated_share": 0.00276,
+   "shed_share": 0.04524,
+   "bad_service_hours": 306,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.29658,
+   "met_per_gpu_hour": 63895.36734,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 9,
+   "replica_starts_per_day": 102.42857,
+   "fallback_share": 0.28652,
+   "drift_events": 5,
+   "drift_window_attainment": 0.93386,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.85185,
+   "training_job_hours": 39.31487,
+   "training_tokens_b": 40.33815,
+   "training_net_tokens_b": 39.6992,
+   "training_gpu_share": 0.3453,
+   "training_preemptions": 133,
+   "training_crashes": 0,
+   "fleet_busy": 0.64187,
+   "cap_serving": 0.22797,
+   "cap_inference_headroom": 0.0686,
+   "cap_training_kept": 0.34235,
+   "cap_training_lost_to_preemption": 0.00294,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.00529,
+   "cap_stranded_too_few_gpus_free": 0.02811,
+   "cap_stranded_no_job_fits_memory": 0.09011,
+   "cap_idle_nothing_queued": 0.23461
+  },
+  "platform_ilp": {
+   "requests": 1924087318.55394,
+   "attainment": 0.94578,
+   "violated_share": 0.00241,
+   "shed_share": 0.05181,
+   "bad_service_hours": 409,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.26954,
+   "met_per_gpu_hour": 69937.80084,
+   "crashes": 0,
+   "tpot_misses": 2,
+   "overloads": 17,
+   "replica_starts_per_day": 68.76191,
+   "fallback_share": 0.5019,
+   "drift_events": 3,
+   "drift_window_attainment": 0.9261,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.82407,
+   "training_job_hours": 40.83987,
+   "training_tokens_b": 38.8956,
+   "training_net_tokens_b": 38.52807,
+   "training_gpu_share": 0.33518,
+   "training_preemptions": 80,
+   "training_crashes": 0,
+   "fleet_busy": 0.60472,
+   "cap_serving": 0.21352,
+   "cap_inference_headroom": 0.05602,
+   "cap_training_kept": 0.33334,
+   "cap_training_lost_to_preemption": 0.00184,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.01266,
+   "cap_stranded_too_few_gpus_free": 0.03593,
+   "cap_stranded_no_job_fits_memory": 0.10005,
+   "cap_idle_nothing_queued": 0.24664
+  },
+  "learned_backfill": {
+   "requests": 1924087318.55394,
+   "attainment": 0.952,
+   "violated_share": 0.00276,
+   "shed_share": 0.04524,
+   "bad_service_hours": 306,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.29658,
+   "met_per_gpu_hour": 63895.36734,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 9,
+   "replica_starts_per_day": 102.42857,
+   "fallback_share": 0.28652,
+   "drift_events": 5,
+   "drift_window_attainment": 0.93386,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.68519,
+   "training_job_hours": 45.87864,
+   "training_tokens_b": 39.17953,
+   "training_net_tokens_b": 38.68385,
+   "training_gpu_share": 0.33057,
+   "training_preemptions": 105,
+   "training_crashes": 0,
+   "fleet_busy": 0.62714,
+   "cap_serving": 0.22797,
+   "cap_inference_headroom": 0.0686,
+   "cap_training_kept": 0.32852,
+   "cap_training_lost_to_preemption": 0.00205,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.06822,
+   "cap_stranded_too_few_gpus_free": 0.05785,
+   "cap_stranded_no_job_fits_memory": 0.18254,
+   "cap_idle_nothing_queued": 0.06424
+  },
+  "elastic_jobs": {
+   "requests": 1924087318.55394,
+   "attainment": 0.952,
+   "violated_share": 0.00276,
+   "shed_share": 0.04524,
+   "bad_service_hours": 306,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.29658,
+   "met_per_gpu_hour": 63895.36734,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 9,
+   "replica_starts_per_day": 102.42857,
+   "fallback_share": 0.28652,
+   "drift_events": 5,
+   "drift_window_attainment": 0.93386,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.86111,
+   "training_job_hours": 38.38194,
+   "training_tokens_b": 40.0362,
+   "training_net_tokens_b": 39.69616,
+   "training_gpu_share": 0.42166,
+   "training_preemptions": 79,
+   "training_crashes": 0,
+   "fleet_busy": 0.71823,
+   "cap_serving": 0.22797,
+   "cap_inference_headroom": 0.0686,
+   "cap_training_kept": 0.42006,
+   "cap_training_lost_to_preemption": 0.00159,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.00663,
+   "cap_stranded_too_few_gpus_free": 0.02161,
+   "cap_stranded_no_job_fits_memory": 0.02,
+   "cap_idle_nothing_queued": 0.23352
+  },
+  "ilp_elastic": {
+   "requests": 1924087318.55394,
+   "attainment": 0.94578,
+   "violated_share": 0.00241,
+   "shed_share": 0.05181,
+   "bad_service_hours": 409,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.26954,
+   "met_per_gpu_hour": 69937.80084,
+   "crashes": 0,
+   "tpot_misses": 2,
+   "overloads": 17,
+   "replica_starts_per_day": 68.76191,
+   "fallback_share": 0.5019,
+   "drift_events": 3,
+   "drift_window_attainment": 0.9261,
+   "drift_recovery_hours": 1.0,
+   "train_points": 642,
+   "training_jobs": 108,
+   "training_done_share": 0.88889,
+   "training_job_hours": 40.11205,
+   "training_tokens_b": 39.71591,
+   "training_net_tokens_b": 39.37312,
+   "training_gpu_share": 0.40347,
+   "training_preemptions": 81,
+   "training_crashes": 0,
+   "fleet_busy": 0.67302,
+   "cap_serving": 0.21352,
+   "cap_inference_headroom": 0.05602,
+   "cap_training_kept": 0.40163,
+   "cap_training_lost_to_preemption": 0.00184,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.00428,
+   "cap_stranded_too_few_gpus_free": 0.01764,
+   "cap_stranded_no_job_fits_memory": 0.01831,
+   "cap_idle_nothing_queued": 0.28676
+  },
+  "oracle": {
+   "requests": 1924087318.55394,
+   "attainment": 0.95161,
+   "violated_share": 0.00182,
+   "shed_share": 0.04657,
+   "bad_service_hours": 333,
+   "service_hours": 2520,
+   "gpu_utilisation": 0.27601,
+   "met_per_gpu_hour": 68652.98493,
+   "crashes": 0,
+   "tpot_misses": 0,
+   "overloads": 0,
+   "replica_starts_per_day": 97.19048,
+   "fallback_share": 0.0,
+   "drift_events": 0,
+   "drift_window_attainment": 0.93186,
+   "drift_recovery_hours": 1.0,
+   "train_points": 0,
+   "training_jobs": 108,
+   "training_done_share": 0.7963,
+   "training_job_hours": 39.26506,
+   "training_tokens_b": 37.93473,
+   "training_net_tokens_b": 37.67688,
+   "training_gpu_share": 0.35424,
+   "training_preemptions": 54,
+   "training_crashes": 0,
+   "fleet_busy": 0.63025,
+   "cap_serving": 0.21446,
+   "cap_inference_headroom": 0.06155,
+   "cap_training_kept": 0.3529,
+   "cap_training_lost_to_preemption": 0.00134,
+   "cap_training_out_of_memory": 0.0,
+   "cap_stranded_job_fit_but_waited": 0.01069,
+   "cap_stranded_too_few_gpus_free": 0.03255,
+   "cap_stranded_no_job_fits_memory": 0.08317,
+   "cap_idle_nothing_queued": 0.24333
+  }
+ },
+ "labels": {
+  "uniform": "Built for identical hardware (every GPU treated as an A100)",
+  "roofline": "Data-sheet roofline, one efficiency for every GPU",
+  "roofline_calibrated": "Roofline corrected by measured step times, with admission control",
+  "platform": "The platform (learned ensemble, margin, fallback, feedback, admission)",
+  "with_margin": "Platform planning on the ensemble mean + 1 std everywhere",
+  "no_fallback": "Platform that trusts the ensemble where it is unsure",
+  "no_feedback": "Platform that ignores measured step times",
+  "no_admission": "Platform without admission control",
+  "naive_backfill": "Platform that puts training on any free GPU",
+  "platform_ilp": "Platform placing replicas by integer optimisation (HiGHS) instead of the greedy pass",
+  "learned_backfill": "Platform whose fine-tuning start/wait policy was learned by policy search",
+  "elastic_jobs": "Platform that may shard a fine-tuning job over twice the GPUs (or run it on half)",
+  "ilp_elastic": "Integer placement + elastic fine-tuning jobs",
+  "oracle": "Knows the true step times (upper bound)"
+ },
+ "main": [
+  "uniform",
+  "roofline",
+  "roofline_calibrated",
+  "platform",
+  "oracle"
+ ],
+ "ablations": [
+  "with_margin",
+  "no_fallback",
+  "no_feedback",
+  "no_admission",
+  "naive_backfill"
+ ],
+ "accuracy": {
+  "measured_pairs": {
+   "points": 418.0,
+   "learned_mape": 0.02181,
+   "roofline_mape": 0.16574,
+   "interval_coverage": 0.96093
+  },
+  "unmeasured_pairs": {
+   "points": 482.0,
+   "learned_mape": 0.16274,
+   "roofline_mape": 0.17439,
+   "interval_coverage": 0.85892
+  },
+  "unseen_gpu": {
+   "gpu": "B200",
+   "points": 232.0,
+   "learned_mape": 0.16975,
+   "roofline_mape": 0.167,
+   "interval_coverage": 0.8477
+  },
+  "unseen_gpu_calibrated": {
+   "gpu": "B200",
+   "extra_profiles": 3.0,
+   "points": 232.0,
+   "learned_mape": 0.10307,
+   "roofline_mape": 0.167,
+   "interval_coverage": 1.0
+  }
+ },
+ "expansion": {
+  "per_seed": [
+   {
+    "gpu": "B200",
+    "count": 32,
+    "true_gain": 0.50518,
+    "estimators": {
+     "roofline": {
+      "predicted_gain": 0.50347,
+      "error": -0.00338
+     },
+     "learned": {
+      "predicted_gain": 0.51053,
+      "error": 0.01059
+     },
+     "learned_calibrated": {
+      "predicted_gain": 0.44481,
+      "error": -0.11949
+     }
+    }
+   },
+   {
+    "gpu": "B200",
+    "count": 32,
+    "true_gain": 0.49225,
+    "estimators": {
+     "roofline": {
+      "predicted_gain": 0.52719,
+      "error": 0.07098
+     },
+     "learned": {
+      "predicted_gain": 0.45591,
+      "error": -0.07383
+     },
+     "learned_calibrated": {
+      "predicted_gain": 0.49146,
+      "error": -0.00161
+     }
+    }
+   },
+   {
+    "gpu": "B200",
+    "count": 32,
+    "true_gain": 0.3742,
+    "estimators": {
+     "roofline": {
+      "predicted_gain": 0.47826,
+      "error": 0.27809
+     },
+     "learned": {
+      "predicted_gain": 0.48685,
+      "error": 0.30105
+     },
+     "learned_calibrated": {
+      "predicted_gain": 0.34957,
+      "error": -0.06582
+     }
+    }
+   }
+  ],
+  "mean_abs_error": {
+   "roofline": 0.11748,
+   "learned": 0.12849,
+   "learned_calibrated": 0.06231
+  }
+ },
+ "site": {
+  "gpus": 192,
+  "gpu_types": 6,
+  "services": 5,
+  "hours": 168,
+  "profiles": 214
+ },
+ "per_seed": [
+  {
+   "seed": 5201,
+   "uniform": 0.6554,
+   "roofline": 0.62175,
+   "roofline_calibrated": 0.95064,
+   "platform": 0.955,
+   "oracle": 0.95417
+  },
+  {
+   "seed": 5202,
+   "uniform": 0.57658,
+   "roofline": 0.4662,
+   "roofline_calibrated": 0.94348,
+   "platform": 0.95676,
+   "oracle": 0.95524
+  },
+  {
+   "seed": 5203,
+   "uniform": 0.54261,
+   "roofline": 0.53308,
+   "roofline_calibrated": 0.94059,
+   "platform": 0.94425,
+   "oracle": 0.94542
+  }
+ ],
+ "samples": {
+  "hours": {
+   "roofline_calibrated": [
+    {
+     "hour": 0,
+     "attainment": 0.97826,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 1,
+     "attainment": 0.9937,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 2,
+     "attainment": 0.99868,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 3,
+     "attainment": 0.99608,
+     "gpus": 30,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 4,
+     "attainment": 0.9256,
+     "gpus": 28,
+     "shed": 0.05596,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 5,
+     "attainment": 0.98057,
+     "gpus": 30,
+     "shed": 0.01913,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 6,
+     "attainment": 0.97066,
+     "gpus": 27,
+     "shed": 0.00753,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 7,
+     "attainment": 0.94144,
+     "gpus": 30,
+     "shed": 0.0562,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 8,
+     "attainment": 0.88416,
+     "gpus": 35,
+     "shed": 0.11433,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 9,
+     "attainment": 0.89511,
+     "gpus": 43,
+     "shed": 0.10437,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 10,
+     "attainment": 0.99258,
+     "gpus": 52,
+     "shed": 0.0071,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 11,
+     "attainment": 0.94601,
+     "gpus": 52,
+     "shed": 0.01478,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 12,
+     "attainment": 0.89841,
+     "gpus": 57,
+     "shed": 0.09365,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 13,
+     "attainment": 0.86518,
+     "gpus": 70,
+     "shed": 0.13462,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 14,
+     "attainment": 0.97893,
+     "gpus": 75,
+     "shed": 0.00674,
+     "train_gpus": 24.0,
+     "preempted": 1
+    },
+    {
+     "hour": 15,
+     "attainment": 0.97637,
+     "gpus": 70,
+     "shed": 0.023,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 16,
+     "attainment": 0.89811,
+     "gpus": 74,
+     "shed": 0.04957,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 17,
+     "attainment": 0.97233,
+     "gpus": 70,
+     "shed": 0.0238,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 18,
+     "attainment": 0.99999,
+     "gpus": 76,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 19,
+     "attainment": 0.9982,
+     "gpus": 68,
+     "shed": 0.00137,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 20,
+     "attainment": 0.99996,
+     "gpus": 69,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 21,
+     "attainment": 0.8396,
+     "gpus": 64,
+     "shed": 0.16038,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 22,
+     "attainment": 0.99999,
+     "gpus": 59,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 23,
+     "attainment": 0.99997,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 24,
+     "attainment": 1.0,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 25,
+     "attainment": 0.99081,
+     "gpus": 38,
+     "shed": 0.00914,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 26,
+     "attainment": 1.0,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 27,
+     "attainment": 0.9627,
+     "gpus": 32,
+     "shed": 0.0373,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 28,
+     "attainment": 0.9867,
+     "gpus": 33,
+     "shed": 0.01197,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 29,
+     "attainment": 0.99999,
+     "gpus": 33,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 30,
+     "attainment": 0.91145,
+     "gpus": 29,
+     "shed": 0.08836,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 31,
+     "attainment": 0.99999,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 1
+    },
+    {
+     "hour": 32,
+     "attainment": 0.90906,
+     "gpus": 36,
+     "shed": 0.08966,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 33,
+     "attainment": 0.88887,
+     "gpus": 42,
+     "shed": 0.10743,
+     "train_gpus": 48.03417,
+     "preempted": 0
+    },
+    {
+     "hour": 34,
+     "attainment": 0.76909,
+     "gpus": 44,
+     "shed": 0.22849,
+     "train_gpus": 41.02917,
+     "preempted": 0
+    },
+    {
+     "hour": 35,
+     "attainment": 0.9995,
+     "gpus": 68,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 1
+    },
+    {
+     "hour": 36,
+     "attainment": 0.81565,
+     "gpus": 62,
+     "shed": 0.17607,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 37,
+     "attainment": 0.98209,
+     "gpus": 76,
+     "shed": 0.01784,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 38,
+     "attainment": 0.78956,
+     "gpus": 75,
+     "shed": 0.206,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 39,
+     "attainment": 1.0,
+     "gpus": 94,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 2
+    },
+    {
+     "hour": 40,
+     "attainment": 0.99856,
+     "gpus": 77,
+     "shed": 0.00038,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 41,
+     "attainment": 0.99542,
+     "gpus": 75,
+     "shed": 0.00454,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 42,
+     "attainment": 0.96601,
+     "gpus": 74,
+     "shed": 0.03127,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 43,
+     "attainment": 1.0,
+     "gpus": 80,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 1
+    },
+    {
+     "hour": 44,
+     "attainment": 0.9744,
+     "gpus": 65,
+     "shed": 0.02523,
+     "train_gpus": 52.66124,
+     "preempted": 0
+    },
+    {
+     "hour": 45,
+     "attainment": 1.0,
+     "gpus": 67,
+     "shed": 0.0,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 46,
+     "attainment": 0.98776,
+     "gpus": 51,
+     "shed": 0.01222,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 47,
+     "attainment": 1.0,
+     "gpus": 51,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 48,
+     "attainment": 0.99627,
+     "gpus": 48,
+     "shed": 0.00369,
+     "train_gpus": 59.48462,
+     "preempted": 0
+    },
+    {
+     "hour": 49,
+     "attainment": 1.0,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 50,
+     "attainment": 0.99377,
+     "gpus": 33,
+     "shed": 0.00619,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 51,
+     "attainment": 1.0,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 52,
+     "attainment": 0.93369,
+     "gpus": 35,
+     "shed": 0.06608,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 53,
+     "attainment": 0.95399,
+     "gpus": 36,
+     "shed": 0.04561,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 54,
+     "attainment": 1.0,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 55,
+     "attainment": 0.93245,
+     "gpus": 31,
+     "shed": 0.06751,
+     "train_gpus": 86.59155,
+     "preempted": 0
+    },
+    {
+     "hour": 56,
+     "attainment": 0.94511,
+     "gpus": 36,
+     "shed": 0.05443,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 57,
+     "attainment": 0.9757,
+     "gpus": 46,
+     "shed": 0.0215,
+     "train_gpus": 62.78737,
+     "preempted": 1
+    },
+    {
+     "hour": 58,
+     "attainment": 0.80623,
+     "gpus": 46,
+     "shed": 0.19142,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 59,
+     "attainment": 0.96586,
+     "gpus": 60,
+     "shed": 0.03379,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 60,
+     "attainment": 0.9329,
+     "gpus": 63,
+     "shed": 0.05145,
+     "train_gpus": 53.73138,
+     "preempted": 0
+    },
+    {
+     "hour": 61,
+     "attainment": 0.96784,
+     "gpus": 69,
+     "shed": 0.0296,
+     "train_gpus": 40.0,
+     "preempted": 1
+    },
+    {
+     "hour": 62,
+     "attainment": 0.97764,
+     "gpus": 80,
+     "shed": 0.0209,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 63,
+     "attainment": 0.99905,
+     "gpus": 84,
+     "shed": 0.00086,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 64,
+     "attainment": 0.93575,
+     "gpus": 75,
+     "shed": 0.06277,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 65,
+     "attainment": 0.99947,
+     "gpus": 82,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 66,
+     "attainment": 0.75548,
+     "gpus": 72,
+     "shed": 0.2438,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 67,
+     "attainment": 0.95932,
+     "gpus": 84,
+     "shed": 0.04061,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 68,
+     "attainment": 0.99408,
+     "gpus": 74,
+     "shed": 0.00586,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 69,
+     "attainment": 0.99965,
+     "gpus": 61,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 70,
+     "attainment": 1.0,
+     "gpus": 54,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 71,
+     "attainment": 1.0,
+     "gpus": 48,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 72,
+     "attainment": 1.0,
+     "gpus": 46,
+     "shed": 0.0,
+     "train_gpus": 63.78073,
+     "preempted": 0
+    },
+    {
+     "hour": 73,
+     "attainment": 1.0,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 74,
+     "attainment": 0.99514,
+     "gpus": 32,
+     "shed": 0.00372,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 75,
+     "attainment": 0.9274,
+     "gpus": 32,
+     "shed": 0.07142,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 76,
+     "attainment": 0.97156,
+     "gpus": 36,
+     "shed": 0.02083,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 77,
+     "attainment": 0.74815,
+     "gpus": 30,
+     "shed": 0.24764,
+     "train_gpus": 66.86173,
+     "preempted": 0
+    },
+    {
+     "hour": 78,
+     "attainment": 0.97948,
+     "gpus": 33,
+     "shed": 0.02044,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 79,
+     "attainment": 0.88431,
+     "gpus": 28,
+     "shed": 0.11493,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 80,
+     "attainment": 0.94666,
+     "gpus": 36,
+     "shed": 0.05231,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 81,
+     "attainment": 0.94975,
+     "gpus": 43,
+     "shed": 0.04919,
+     "train_gpus": 80.0,
+     "preempted": 1
+    },
+    {
+     "hour": 82,
+     "attainment": 0.98442,
+     "gpus": 45,
+     "shed": 0.01396,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 83,
+     "attainment": 0.92625,
+     "gpus": 54,
+     "shed": 0.07122,
+     "train_gpus": 75.97369,
+     "preempted": 0
+    },
+    {
+     "hour": 84,
+     "attainment": 0.96756,
+     "gpus": 73,
+     "shed": 0.03243,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 85,
+     "attainment": 0.99557,
+     "gpus": 70,
+     "shed": 0.00421,
+     "train_gpus": 79.63224,
+     "preempted": 0
+    },
+    {
+     "hour": 86,
+     "attainment": 0.9524,
+     "gpus": 77,
+     "shed": 0.04465,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 87,
+     "attainment": 0.90323,
+     "gpus": 93,
+     "shed": 0.07884,
+     "train_gpus": 60.0,
+     "preempted": 1
+    },
+    {
+     "hour": 88,
+     "attainment": 0.99983,
+     "gpus": 96,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 89,
+     "attainment": 0.88758,
+     "gpus": 77,
+     "shed": 0.1027,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 90,
+     "attainment": 0.99819,
+     "gpus": 87,
+     "shed": 0.00088,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 91,
+     "attainment": 0.99851,
+     "gpus": 76,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 92,
+     "attainment": 0.99942,
+     "gpus": 74,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 93,
+     "attainment": 0.99998,
+     "gpus": 71,
+     "shed": 0.0,
+     "train_gpus": 87.1818,
+     "preempted": 0
+    },
+    {
+     "hour": 94,
+     "attainment": 0.91389,
+     "gpus": 57,
+     "shed": 0.08329,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 95,
+     "attainment": 1.0,
+     "gpus": 60,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 96,
+     "attainment": 1.0,
+     "gpus": 40,
+     "shed": 0.0,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 97,
+     "attainment": 0.99182,
+     "gpus": 37,
+     "shed": 0.00815,
+     "train_gpus": 105.69464,
+     "preempted": 0
+    },
+    {
+     "hour": 98,
+     "attainment": 1.0,
+     "gpus": 31,
+     "shed": 0.0,
+     "train_gpus": 87.45318,
+     "preempted": 0
+    },
+    {
+     "hour": 99,
+     "attainment": 0.97828,
+     "gpus": 27,
+     "shed": 0.02172,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 100,
+     "attainment": 0.97741,
+     "gpus": 29,
+     "shed": 0.02257,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 101,
+     "attainment": 0.98326,
+     "gpus": 26,
+     "shed": 0.01674,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 102,
+     "attainment": 0.96457,
+     "gpus": 28,
+     "shed": 0.03485,
+     "train_gpus": 94.14011,
+     "preempted": 0
+    },
+    {
+     "hour": 103,
+     "attainment": 0.99952,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 104,
+     "attainment": 0.947,
+     "gpus": 31,
+     "shed": 0.04848,
+     "train_gpus": 90.09616,
+     "preempted": 0
+    },
+    {
+     "hour": 105,
+     "attainment": 0.95551,
+     "gpus": 36,
+     "shed": 0.03856,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 106,
+     "attainment": 0.89178,
+     "gpus": 44,
+     "shed": 0.08639,
+     "train_gpus": 79.98579,
+     "preempted": 0
+    },
+    {
+     "hour": 107,
+     "attainment": 0.9279,
+     "gpus": 50,
+     "shed": 0.04591,
+     "train_gpus": 71.19442,
+     "preempted": 0
+    },
+    {
+     "hour": 108,
+     "attainment": 0.99963,
+     "gpus": 65,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 109,
+     "attainment": 0.75278,
+     "gpus": 60,
+     "shed": 0.2216,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 110,
+     "attainment": 0.99878,
+     "gpus": 95,
+     "shed": 0.0,
+     "train_gpus": 50.50909,
+     "preempted": 1
+    },
+    {
+     "hour": 111,
+     "attainment": 0.88941,
+     "gpus": 80,
+     "shed": 0.03691,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 112,
+     "attainment": 0.95181,
+     "gpus": 80,
+     "shed": 0.04458,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 113,
+     "attainment": 0.94863,
+     "gpus": 86,
+     "shed": 0.03024,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 114,
+     "attainment": 0.86268,
+     "gpus": 88,
+     "shed": 0.12482,
+     "train_gpus": 60.95851,
+     "preempted": 0
+    },
+    {
+     "hour": 115,
+     "attainment": 0.98376,
+     "gpus": 85,
+     "shed": 0.01621,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 116,
+     "attainment": 0.95657,
+     "gpus": 64,
+     "shed": 0.02683,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 117,
+     "attainment": 0.99999,
+     "gpus": 63,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 118,
+     "attainment": 0.96007,
+     "gpus": 47,
+     "shed": 0.01868,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 119,
+     "attainment": 0.99999,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 120,
+     "attainment": 0.99988,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 121,
+     "attainment": 0.99999,
+     "gpus": 27,
+     "shed": 0.0,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 122,
+     "attainment": 0.96619,
+     "gpus": 21,
+     "shed": 0.02919,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 123,
+     "attainment": 1.0,
+     "gpus": 25,
+     "shed": 0.0,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 124,
+     "attainment": 1.0,
+     "gpus": 21,
+     "shed": 0.0,
+     "train_gpus": 116.0,
+     "preempted": 0
+    },
+    {
+     "hour": 125,
+     "attainment": 0.98311,
+     "gpus": 21,
+     "shed": 0.01686,
+     "train_gpus": 116.0,
+     "preempted": 0
+    },
+    {
+     "hour": 126,
+     "attainment": 0.99363,
+     "gpus": 20,
+     "shed": 0.00637,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 127,
+     "attainment": 0.99369,
+     "gpus": 24,
+     "shed": 0.00631,
+     "train_gpus": 112.93243,
+     "preempted": 0
+    },
+    {
+     "hour": 128,
+     "attainment": 0.89544,
+     "gpus": 23,
+     "shed": 0.10343,
+     "train_gpus": 103.45713,
+     "preempted": 0
+    },
+    {
+     "hour": 129,
+     "attainment": 0.84732,
+     "gpus": 31,
+     "shed": 0.14098,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 130,
+     "attainment": 0.92432,
+     "gpus": 42,
+     "shed": 0.07532,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 131,
+     "attainment": 0.98308,
+     "gpus": 44,
+     "shed": 0.0083,
+     "train_gpus": 96.79967,
+     "preempted": 0
+    },
+    {
+     "hour": 132,
+     "attainment": 0.89037,
+     "gpus": 48,
+     "shed": 0.08375,
+     "train_gpus": 88.02954,
+     "preempted": 0
+    },
+    {
+     "hour": 133,
+     "attainment": 0.99564,
+     "gpus": 53,
+     "shed": 0.00089,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 134,
+     "attainment": 0.93269,
+     "gpus": 55,
+     "shed": 0.06284,
+     "train_gpus": 83.40578,
+     "preempted": 0
+    },
+    {
+     "hour": 135,
+     "attainment": 0.95404,
+     "gpus": 59,
+     "shed": 0.02496,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 136,
+     "attainment": 0.99841,
+     "gpus": 65,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 1
+    },
+    {
+     "hour": 137,
+     "attainment": 0.91798,
+     "gpus": 57,
+     "shed": 0.04683,
+     "train_gpus": 73.13254,
+     "preempted": 0
+    },
+    {
+     "hour": 138,
+     "attainment": 0.94254,
+     "gpus": 59,
+     "shed": 0.05716,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 139,
+     "attainment": 0.98914,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 140,
+     "attainment": 0.97493,
+     "gpus": 49,
+     "shed": 0.02433,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 141,
+     "attainment": 0.99259,
+     "gpus": 46,
+     "shed": 0.00643,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 142,
+     "attainment": 0.9975,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 68.71497,
+     "preempted": 0
+    },
+    {
+     "hour": 143,
+     "attainment": 0.99996,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 144,
+     "attainment": 0.94684,
+     "gpus": 30,
+     "shed": 0.02755,
+     "train_gpus": 52.73265,
+     "preempted": 0
+    },
+    {
+     "hour": 145,
+     "attainment": 0.99999,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 146,
+     "attainment": 0.99974,
+     "gpus": 23,
+     "shed": 0.0,
+     "train_gpus": 42.94037,
+     "preempted": 0
+    },
+    {
+     "hour": 147,
+     "attainment": 0.99952,
+     "gpus": 21,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 148,
+     "attainment": 0.96229,
+     "gpus": 20,
+     "shed": 0.02965,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 149,
+     "attainment": 0.9335,
+     "gpus": 20,
+     "shed": 0.06647,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 150,
+     "attainment": 0.97154,
+     "gpus": 19,
+     "shed": 0.0264,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 151,
+     "attainment": 0.91895,
+     "gpus": 27,
+     "shed": 0.07388,
+     "train_gpus": 32.04427,
+     "preempted": 0
+    },
+    {
+     "hour": 152,
+     "attainment": 0.91014,
+     "gpus": 31,
+     "shed": 0.08939,
+     "train_gpus": 28.0,
+     "preempted": 0
+    },
+    {
+     "hour": 153,
+     "attainment": 0.96083,
+     "gpus": 31,
+     "shed": 0.02903,
+     "train_gpus": 28.0,
+     "preempted": 0
+    },
+    {
+     "hour": 154,
+     "attainment": 0.92003,
+     "gpus": 35,
+     "shed": 0.07193,
+     "train_gpus": 21.88999,
+     "preempted": 0
+    },
+    {
+     "hour": 155,
+     "attainment": 0.74588,
+     "gpus": 41,
+     "shed": 0.25217,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 156,
+     "attainment": 0.94798,
+     "gpus": 50,
+     "shed": 0.03835,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 157,
+     "attainment": 0.99016,
+     "gpus": 51,
+     "shed": 0.00476,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 158,
+     "attainment": 0.88354,
+     "gpus": 51,
+     "shed": 0.09358,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 159,
+     "attainment": 0.99781,
+     "gpus": 63,
+     "shed": 0.0,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 160,
+     "attainment": 0.95674,
+     "gpus": 57,
+     "shed": 0.02463,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 161,
+     "attainment": 0.99842,
+     "gpus": 63,
+     "shed": 0.00117,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 162,
+     "attainment": 0.99532,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 163,
+     "attainment": 0.98273,
+     "gpus": 53,
+     "shed": 0.01656,
+     "train_gpus": 20.0,
+     "preempted": 0
+    },
+    {
+     "hour": 164,
+     "attainment": 0.98824,
+     "gpus": 54,
+     "shed": 0.00939,
+     "train_gpus": 15.78184,
+     "preempted": 0
+    },
+    {
+     "hour": 165,
+     "attainment": 0.99246,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 12.0,
+     "preempted": 0
+    },
+    {
+     "hour": 166,
+     "attainment": 0.99993,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 12.0,
+     "preempted": 0
+    },
+    {
+     "hour": 167,
+     "attainment": 0.99261,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 12.0,
+     "preempted": 0
+    }
+   ],
+   "platform": [
+    {
+     "hour": 0,
+     "attainment": 0.99996,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 1,
+     "attainment": 0.99998,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 2,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 3,
+     "attainment": 0.99608,
+     "gpus": 31,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 4,
+     "attainment": 0.92371,
+     "gpus": 28,
+     "shed": 0.06934,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 5,
+     "attainment": 0.97471,
+     "gpus": 32,
+     "shed": 0.02522,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 6,
+     "attainment": 0.99989,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 7,
+     "attainment": 0.92864,
+     "gpus": 31,
+     "shed": 0.06917,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 8,
+     "attainment": 0.91431,
+     "gpus": 36,
+     "shed": 0.08034,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 9,
+     "attainment": 0.86819,
+     "gpus": 45,
+     "shed": 0.13175,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 10,
+     "attainment": 0.99999,
+     "gpus": 55,
+     "shed": 0.0,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 11,
+     "attainment": 0.94952,
+     "gpus": 51,
+     "shed": 0.04686,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 12,
+     "attainment": 0.89227,
+     "gpus": 62,
+     "shed": 0.10275,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 13,
+     "attainment": 0.85719,
+     "gpus": 78,
+     "shed": 0.14275,
+     "train_gpus": 24.0,
+     "preempted": 1
+    },
+    {
+     "hour": 14,
+     "attainment": 0.9898,
+     "gpus": 80,
+     "shed": 0.00584,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 15,
+     "attainment": 0.97557,
+     "gpus": 76,
+     "shed": 0.01086,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 16,
+     "attainment": 0.94952,
+     "gpus": 76,
+     "shed": 0.05047,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 17,
+     "attainment": 0.97706,
+     "gpus": 72,
+     "shed": 0.02268,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 18,
+     "attainment": 0.9999,
+     "gpus": 77,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 19,
+     "attainment": 0.99994,
+     "gpus": 69,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 20,
+     "attainment": 0.99785,
+     "gpus": 70,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 21,
+     "attainment": 0.8468,
+     "gpus": 63,
+     "shed": 0.15305,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 22,
+     "attainment": 0.98184,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 23,
+     "attainment": 0.99944,
+     "gpus": 48,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 24,
+     "attainment": 0.99497,
+     "gpus": 43,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 25,
+     "attainment": 0.99356,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 26,
+     "attainment": 0.99489,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 27,
+     "attainment": 0.94389,
+     "gpus": 34,
+     "shed": 0.05258,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 28,
+     "attainment": 0.91802,
+     "gpus": 30,
+     "shed": 0.05323,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 29,
+     "attainment": 0.99967,
+     "gpus": 30,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 30,
+     "attainment": 0.89925,
+     "gpus": 29,
+     "shed": 0.08627,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 31,
+     "attainment": 0.99715,
+     "gpus": 41,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 1
+    },
+    {
+     "hour": 32,
+     "attainment": 0.91375,
+     "gpus": 35,
+     "shed": 0.06805,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 33,
+     "attainment": 0.85902,
+     "gpus": 46,
+     "shed": 0.11036,
+     "train_gpus": 48.03417,
+     "preempted": 1
+    },
+    {
+     "hour": 34,
+     "attainment": 0.77116,
+     "gpus": 41,
+     "shed": 0.22313,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 35,
+     "attainment": 0.99891,
+     "gpus": 73,
+     "shed": 0.0,
+     "train_gpus": 41.77536,
+     "preempted": 0
+    },
+    {
+     "hour": 36,
+     "attainment": 0.78128,
+     "gpus": 62,
+     "shed": 0.19749,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 37,
+     "attainment": 0.99992,
+     "gpus": 88,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 38,
+     "attainment": 0.73512,
+     "gpus": 78,
+     "shed": 0.20449,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 39,
+     "attainment": 0.99577,
+     "gpus": 96,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 1
+    },
+    {
+     "hour": 40,
+     "attainment": 0.98808,
+     "gpus": 78,
+     "shed": 0.00414,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 41,
+     "attainment": 0.98554,
+     "gpus": 80,
+     "shed": 0.01325,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 42,
+     "attainment": 0.92959,
+     "gpus": 75,
+     "shed": 0.03744,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 43,
+     "attainment": 0.99973,
+     "gpus": 92,
+     "shed": 0.0,
+     "train_gpus": 44.0,
+     "preempted": 1
+    },
+    {
+     "hour": 44,
+     "attainment": 0.96947,
+     "gpus": 78,
+     "shed": 0.03035,
+     "train_gpus": 36.66124,
+     "preempted": 0
+    },
+    {
+     "hour": 45,
+     "attainment": 0.99991,
+     "gpus": 72,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 46,
+     "attainment": 0.99559,
+     "gpus": 52,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 47,
+     "attainment": 0.99486,
+     "gpus": 49,
+     "shed": 0.0,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 48,
+     "attainment": 0.98152,
+     "gpus": 45,
+     "shed": 0.00704,
+     "train_gpus": 75.48462,
+     "preempted": 0
+    },
+    {
+     "hour": 49,
+     "attainment": 0.99885,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 50,
+     "attainment": 0.98722,
+     "gpus": 32,
+     "shed": 0.00887,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 51,
+     "attainment": 0.98413,
+     "gpus": 33,
+     "shed": 0.0,
+     "train_gpus": 52.41963,
+     "preempted": 0
+    },
+    {
+     "hour": 52,
+     "attainment": 0.86649,
+     "gpus": 33,
+     "shed": 0.11406,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 53,
+     "attainment": 0.97622,
+     "gpus": 38,
+     "shed": 0.00443,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 54,
+     "attainment": 0.99999,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 55,
+     "attainment": 0.95973,
+     "gpus": 30,
+     "shed": 0.03731,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 56,
+     "attainment": 0.97262,
+     "gpus": 36,
+     "shed": 0.02727,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 57,
+     "attainment": 0.95193,
+     "gpus": 49,
+     "shed": 0.03205,
+     "train_gpus": 56.0,
+     "preempted": 1
+    },
+    {
+     "hour": 58,
+     "attainment": 0.79245,
+     "gpus": 45,
+     "shed": 0.20286,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 59,
+     "attainment": 0.95245,
+     "gpus": 60,
+     "shed": 0.02755,
+     "train_gpus": 51.78997,
+     "preempted": 1
+    },
+    {
+     "hour": 60,
+     "attainment": 0.95229,
+     "gpus": 66,
+     "shed": 0.04764,
+     "train_gpus": 44.0,
+     "preempted": 1
+    },
+    {
+     "hour": 61,
+     "attainment": 0.95871,
+     "gpus": 72,
+     "shed": 0.04129,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 62,
+     "attainment": 0.9659,
+     "gpus": 79,
+     "shed": 0.03361,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 63,
+     "attainment": 1.0,
+     "gpus": 96,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 1
+    },
+    {
+     "hour": 64,
+     "attainment": 0.96366,
+     "gpus": 88,
+     "shed": 0.0363,
+     "train_gpus": 42.03904,
+     "preempted": 0
+    },
+    {
+     "hour": 65,
+     "attainment": 0.99903,
+     "gpus": 90,
+     "shed": 0.0006,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 66,
+     "attainment": 0.78529,
+     "gpus": 88,
+     "shed": 0.2147,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 67,
+     "attainment": 0.95501,
+     "gpus": 91,
+     "shed": 0.04499,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 68,
+     "attainment": 1.0,
+     "gpus": 75,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 69,
+     "attainment": 1.0,
+     "gpus": 67,
+     "shed": 0.0,
+     "train_gpus": 68.24738,
+     "preempted": 0
+    },
+    {
+     "hour": 70,
+     "attainment": 1.0,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 71,
+     "attainment": 1.0,
+     "gpus": 52,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 72,
+     "attainment": 1.0,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 73,
+     "attainment": 1.0,
+     "gpus": 44,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 74,
+     "attainment": 1.0,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 75,
+     "attainment": 0.88887,
+     "gpus": 35,
+     "shed": 0.11111,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 76,
+     "attainment": 0.99998,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 77,
+     "attainment": 0.73422,
+     "gpus": 35,
+     "shed": 0.26556,
+     "train_gpus": 88.41458,
+     "preempted": 0
+    },
+    {
+     "hour": 78,
+     "attainment": 0.97393,
+     "gpus": 38,
+     "shed": 0.02607,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 79,
+     "attainment": 0.90778,
+     "gpus": 32,
+     "shed": 0.09219,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 80,
+     "attainment": 0.96001,
+     "gpus": 40,
+     "shed": 0.03998,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 81,
+     "attainment": 0.93758,
+     "gpus": 43,
+     "shed": 0.06236,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 82,
+     "attainment": 0.96398,
+     "gpus": 45,
+     "shed": 0.03597,
+     "train_gpus": 91.45318,
+     "preempted": 0
+    },
+    {
+     "hour": 83,
+     "attainment": 0.92174,
+     "gpus": 62,
+     "shed": 0.07818,
+     "train_gpus": 84.48949,
+     "preempted": 0
+    },
+    {
+     "hour": 84,
+     "attainment": 0.94744,
+     "gpus": 71,
+     "shed": 0.05255,
+     "train_gpus": 91.37433,
+     "preempted": 0
+    },
+    {
+     "hour": 85,
+     "attainment": 0.9876,
+     "gpus": 71,
+     "shed": 0.01239,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 86,
+     "attainment": 0.93853,
+     "gpus": 75,
+     "shed": 0.06125,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 87,
+     "attainment": 0.938,
+     "gpus": 108,
+     "shed": 0.0605,
+     "train_gpus": 64.0,
+     "preempted": 1
+    },
+    {
+     "hour": 88,
+     "attainment": 0.99524,
+     "gpus": 104,
+     "shed": 0.00475,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 89,
+     "attainment": 0.89643,
+     "gpus": 85,
+     "shed": 0.10295,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 90,
+     "attainment": 1.0,
+     "gpus": 100,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 91,
+     "attainment": 0.99949,
+     "gpus": 80,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 92,
+     "attainment": 0.99985,
+     "gpus": 80,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 93,
+     "attainment": 1.0,
+     "gpus": 78,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 94,
+     "attainment": 0.93789,
+     "gpus": 62,
+     "shed": 0.06198,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 95,
+     "attainment": 1.0,
+     "gpus": 64,
+     "shed": 0.0,
+     "train_gpus": 93.07987,
+     "preempted": 0
+    },
+    {
+     "hour": 96,
+     "attainment": 1.0,
+     "gpus": 43,
+     "shed": 0.0,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 97,
+     "attainment": 1.0,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 98,
+     "attainment": 0.99551,
+     "gpus": 32,
+     "shed": 0.00449,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 99,
+     "attainment": 0.97579,
+     "gpus": 29,
+     "shed": 0.02421,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 100,
+     "attainment": 0.99972,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 101,
+     "attainment": 0.99647,
+     "gpus": 30,
+     "shed": 0.00353,
+     "train_gpus": 98.54289,
+     "preempted": 0
+    },
+    {
+     "hour": 102,
+     "attainment": 0.97443,
+     "gpus": 31,
+     "shed": 0.02557,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 103,
+     "attainment": 0.96396,
+     "gpus": 39,
+     "shed": 0.03604,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 104,
+     "attainment": 0.99587,
+     "gpus": 43,
+     "shed": 0.00413,
+     "train_gpus": 94.09616,
+     "preempted": 0
+    },
+    {
+     "hour": 105,
+     "attainment": 0.98356,
+     "gpus": 45,
+     "shed": 0.01643,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 106,
+     "attainment": 0.94513,
+     "gpus": 53,
+     "shed": 0.05487,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 107,
+     "attainment": 0.95354,
+     "gpus": 57,
+     "shed": 0.04642,
+     "train_gpus": 88.81205,
+     "preempted": 0
+    },
+    {
+     "hour": 108,
+     "attainment": 0.99972,
+     "gpus": 71,
+     "shed": 0.00028,
+     "train_gpus": 83.10911,
+     "preempted": 0
+    },
+    {
+     "hour": 109,
+     "attainment": 0.77573,
+     "gpus": 66,
+     "shed": 0.22408,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 110,
+     "attainment": 1.0,
+     "gpus": 108,
+     "shed": 0.0,
+     "train_gpus": 64.0,
+     "preempted": 2
+    },
+    {
+     "hour": 111,
+     "attainment": 0.97652,
+     "gpus": 96,
+     "shed": 0.02345,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 112,
+     "attainment": 0.9825,
+     "gpus": 96,
+     "shed": 0.01745,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 113,
+     "attainment": 0.95917,
+     "gpus": 98,
+     "shed": 0.0408,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 114,
+     "attainment": 0.90722,
+     "gpus": 104,
+     "shed": 0.09278,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 115,
+     "attainment": 0.99061,
+     "gpus": 102,
+     "shed": 0.00938,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 116,
+     "attainment": 0.97559,
+     "gpus": 74,
+     "shed": 0.02438,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 117,
+     "attainment": 0.99991,
+     "gpus": 76,
+     "shed": 0.0,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 118,
+     "attainment": 0.99999,
+     "gpus": 53,
+     "shed": 0.0,
+     "train_gpus": 100.0,
+     "preempted": 0
+    },
+    {
+     "hour": 119,
+     "attainment": 0.98729,
+     "gpus": 51,
+     "shed": 0.01196,
+     "train_gpus": 116.0,
+     "preempted": 0
+    },
+    {
+     "hour": 120,
+     "attainment": 1.0,
+     "gpus": 53,
+     "shed": 0.0,
+     "train_gpus": 116.0,
+     "preempted": 0
+    },
+    {
+     "hour": 121,
+     "attainment": 0.99326,
+     "gpus": 33,
+     "shed": 0.00655,
+     "train_gpus": 103.35192,
+     "preempted": 0
+    },
+    {
+     "hour": 122,
+     "attainment": 0.9749,
+     "gpus": 25,
+     "shed": 0.02451,
+     "train_gpus": 132.0,
+     "preempted": 0
+    },
+    {
+     "hour": 123,
+     "attainment": 1.0,
+     "gpus": 26,
+     "shed": 0.0,
+     "train_gpus": 132.0,
+     "preempted": 0
+    },
+    {
+     "hour": 124,
+     "attainment": 1.0,
+     "gpus": 21,
+     "shed": 0.0,
+     "train_gpus": 132.0,
+     "preempted": 0
+    },
+    {
+     "hour": 125,
+     "attainment": 0.96183,
+     "gpus": 21,
+     "shed": 0.03816,
+     "train_gpus": 128.20847,
+     "preempted": 0
+    },
+    {
+     "hour": 126,
+     "attainment": 0.9799,
+     "gpus": 21,
+     "shed": 0.02009,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 127,
+     "attainment": 0.99763,
+     "gpus": 26,
+     "shed": 0.00237,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 128,
+     "attainment": 0.94804,
+     "gpus": 34,
+     "shed": 0.05196,
+     "train_gpus": 121.50441,
+     "preempted": 0
+    },
+    {
+     "hour": 129,
+     "attainment": 0.89186,
+     "gpus": 32,
+     "shed": 0.10814,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 130,
+     "attainment": 0.92725,
+     "gpus": 51,
+     "shed": 0.07275,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 131,
+     "attainment": 0.98746,
+     "gpus": 53,
+     "shed": 0.01254,
+     "train_gpus": 116.79967,
+     "preempted": 0
+    },
+    {
+     "hour": 132,
+     "attainment": 0.90787,
+     "gpus": 50,
+     "shed": 0.09212,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 133,
+     "attainment": 0.99779,
+     "gpus": 58,
+     "shed": 0.0022,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 134,
+     "attainment": 0.98106,
+     "gpus": 60,
+     "shed": 0.01892,
+     "train_gpus": 106.61764,
+     "preempted": 0
+    },
+    {
+     "hour": 135,
+     "attainment": 0.9797,
+     "gpus": 62,
+     "shed": 0.02022,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 136,
+     "attainment": 1.0,
+     "gpus": 70,
+     "shed": 0.0,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 137,
+     "attainment": 0.97316,
+     "gpus": 66,
+     "shed": 0.0268,
+     "train_gpus": 84.40738,
+     "preempted": 0
+    },
+    {
+     "hour": 138,
+     "attainment": 0.90382,
+     "gpus": 64,
+     "shed": 0.09614,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 139,
+     "attainment": 0.99855,
+     "gpus": 59,
+     "shed": 0.00145,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 140,
+     "attainment": 0.95304,
+     "gpus": 55,
+     "shed": 0.04691,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 141,
+     "attainment": 0.98223,
+     "gpus": 49,
+     "shed": 0.01777,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 142,
+     "attainment": 1.0,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 143,
+     "attainment": 1.0,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 78.79646,
+     "preempted": 0
+    },
+    {
+     "hour": 144,
+     "attainment": 0.98895,
+     "gpus": 35,
+     "shed": 0.01053,
+     "train_gpus": 64.12941,
+     "preempted": 0
+    },
+    {
+     "hour": 145,
+     "attainment": 1.0,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 146,
+     "attainment": 1.0,
+     "gpus": 30,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 147,
+     "attainment": 1.0,
+     "gpus": 23,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 148,
+     "attainment": 0.96473,
+     "gpus": 22,
+     "shed": 0.03527,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 149,
+     "attainment": 0.93348,
+     "gpus": 22,
+     "shed": 0.06652,
+     "train_gpus": 51.7124,
+     "preempted": 0
+    },
+    {
+     "hour": 150,
+     "attainment": 0.93755,
+     "gpus": 23,
+     "shed": 0.06244,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 151,
+     "attainment": 0.97156,
+     "gpus": 32,
+     "shed": 0.02844,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 152,
+     "attainment": 0.9648,
+     "gpus": 38,
+     "shed": 0.0352,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 153,
+     "attainment": 0.97824,
+     "gpus": 40,
+     "shed": 0.02176,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 154,
+     "attainment": 0.90326,
+     "gpus": 41,
+     "shed": 0.09674,
+     "train_gpus": 41.88999,
+     "preempted": 0
+    },
+    {
+     "hour": 155,
+     "attainment": 0.74674,
+     "gpus": 50,
+     "shed": 0.25326,
+     "train_gpus": 40.0,
+     "preempted": 0
+    },
+    {
+     "hour": 156,
+     "attainment": 0.97488,
+     "gpus": 60,
+     "shed": 0.02512,
+     "train_gpus": 40.0,
+     "preempted": 0
+    },
+    {
+     "hour": 157,
+     "attainment": 1.0,
+     "gpus": 58,
+     "shed": 0.0,
+     "train_gpus": 33.53131,
+     "preempted": 0
+    },
+    {
+     "hour": 158,
+     "attainment": 0.90948,
+     "gpus": 54,
+     "shed": 0.09051,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 159,
+     "attainment": 0.99339,
+     "gpus": 66,
+     "shed": 0.00653,
+     "train_gpus": 26.34669,
+     "preempted": 0
+    },
+    {
+     "hour": 160,
+     "attainment": 0.98526,
+     "gpus": 61,
+     "shed": 0.01462,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 161,
+     "attainment": 1.0,
+     "gpus": 66,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 162,
+     "attainment": 0.99997,
+     "gpus": 60,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 163,
+     "attainment": 0.97347,
+     "gpus": 58,
+     "shed": 0.02648,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 164,
+     "attainment": 0.9844,
+     "gpus": 58,
+     "shed": 0.0156,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 165,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 166,
+     "attainment": 0.99999,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 167,
+     "attainment": 1.0,
+     "gpus": 40,
+     "shed": 0.0,
+     "train_gpus": 19.95939,
+     "preempted": 0
+    }
+   ],
+   "oracle": [
+    {
+     "hour": 0,
+     "attainment": 1.0,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 1,
+     "attainment": 1.0,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 2,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 3,
+     "attainment": 1.0,
+     "gpus": 33,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 4,
+     "attainment": 0.95369,
+     "gpus": 30,
+     "shed": 0.04628,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 5,
+     "attainment": 0.96826,
+     "gpus": 32,
+     "shed": 0.03166,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 6,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 7,
+     "attainment": 0.93813,
+     "gpus": 30,
+     "shed": 0.06181,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 8,
+     "attainment": 0.90159,
+     "gpus": 37,
+     "shed": 0.09834,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 9,
+     "attainment": 0.88378,
+     "gpus": 43,
+     "shed": 0.11618,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 10,
+     "attainment": 0.98605,
+     "gpus": 56,
+     "shed": 0.01393,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 11,
+     "attainment": 0.98566,
+     "gpus": 53,
+     "shed": 0.01425,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 12,
+     "attainment": 0.94366,
+     "gpus": 62,
+     "shed": 0.05626,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 13,
+     "attainment": 0.83832,
+     "gpus": 68,
+     "shed": 0.16164,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 14,
+     "attainment": 0.99258,
+     "gpus": 77,
+     "shed": 0.00736,
+     "train_gpus": 24.0,
+     "preempted": 1
+    },
+    {
+     "hour": 15,
+     "attainment": 0.96973,
+     "gpus": 70,
+     "shed": 0.03024,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 16,
+     "attainment": 0.95888,
+     "gpus": 80,
+     "shed": 0.0411,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 17,
+     "attainment": 0.9816,
+     "gpus": 73,
+     "shed": 0.0176,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 18,
+     "attainment": 0.99998,
+     "gpus": 78,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 19,
+     "attainment": 0.99995,
+     "gpus": 69,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 20,
+     "attainment": 0.9975,
+     "gpus": 69,
+     "shed": 0.0025,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 21,
+     "attainment": 0.83589,
+     "gpus": 61,
+     "shed": 0.16409,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 22,
+     "attainment": 1.0,
+     "gpus": 59,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 23,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 24,
+     "attainment": 1.0,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 25,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 26,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 27,
+     "attainment": 0.99999,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 28,
+     "attainment": 0.98157,
+     "gpus": 33,
+     "shed": 0.01836,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 29,
+     "attainment": 0.99999,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 30,
+     "attainment": 0.84417,
+     "gpus": 26,
+     "shed": 0.15577,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 31,
+     "attainment": 1.0,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 32,
+     "attainment": 0.93279,
+     "gpus": 31,
+     "shed": 0.06713,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 33,
+     "attainment": 0.9201,
+     "gpus": 43,
+     "shed": 0.07983,
+     "train_gpus": 60.0,
+     "preempted": 1
+    },
+    {
+     "hour": 34,
+     "attainment": 0.78543,
+     "gpus": 45,
+     "shed": 0.21449,
+     "train_gpus": 48.7955,
+     "preempted": 0
+    },
+    {
+     "hour": 35,
+     "attainment": 1.0,
+     "gpus": 73,
+     "shed": 0.0,
+     "train_gpus": 36.41318,
+     "preempted": 1
+    },
+    {
+     "hour": 36,
+     "attainment": 0.83355,
+     "gpus": 63,
+     "shed": 0.16635,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 37,
+     "attainment": 1.0,
+     "gpus": 81,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 38,
+     "attainment": 0.78818,
+     "gpus": 74,
+     "shed": 0.21175,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 39,
+     "attainment": 0.99999,
+     "gpus": 92,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 40,
+     "attainment": 0.99712,
+     "gpus": 77,
+     "shed": 0.0027,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 41,
+     "attainment": 0.99037,
+     "gpus": 80,
+     "shed": 0.0096,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 42,
+     "attainment": 0.96463,
+     "gpus": 76,
+     "shed": 0.03485,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 43,
+     "attainment": 1.0,
+     "gpus": 88,
+     "shed": 0.0,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 44,
+     "attainment": 0.95716,
+     "gpus": 69,
+     "shed": 0.0425,
+     "train_gpus": 36.66124,
+     "preempted": 0
+    },
+    {
+     "hour": 45,
+     "attainment": 1.0,
+     "gpus": 71,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 46,
+     "attainment": 0.98755,
+     "gpus": 52,
+     "shed": 0.01243,
+     "train_gpus": 62.0524,
+     "preempted": 0
+    },
+    {
+     "hour": 47,
+     "attainment": 1.0,
+     "gpus": 51,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 48,
+     "attainment": 0.99515,
+     "gpus": 48,
+     "shed": 0.00483,
+     "train_gpus": 59.48462,
+     "preempted": 0
+    },
+    {
+     "hour": 49,
+     "attainment": 1.0,
+     "gpus": 48,
+     "shed": 0.0,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 50,
+     "attainment": 0.99235,
+     "gpus": 33,
+     "shed": 0.00763,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 51,
+     "attainment": 1.0,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 52,
+     "attainment": 0.92217,
+     "gpus": 35,
+     "shed": 0.07777,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 53,
+     "attainment": 0.95083,
+     "gpus": 38,
+     "shed": 0.04912,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 54,
+     "attainment": 1.0,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 55,
+     "attainment": 0.92792,
+     "gpus": 33,
+     "shed": 0.07203,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 56,
+     "attainment": 0.93963,
+     "gpus": 36,
+     "shed": 0.06034,
+     "train_gpus": 70.77054,
+     "preempted": 0
+    },
+    {
+     "hour": 57,
+     "attainment": 0.9787,
+     "gpus": 46,
+     "shed": 0.02125,
+     "train_gpus": 64.0,
+     "preempted": 1
+    },
+    {
+     "hour": 58,
+     "attainment": 0.80343,
+     "gpus": 46,
+     "shed": 0.19654,
+     "train_gpus": 58.1039,
+     "preempted": 0
+    },
+    {
+     "hour": 59,
+     "attainment": 0.96093,
+     "gpus": 60,
+     "shed": 0.03904,
+     "train_gpus": 56.0,
+     "preempted": 1
+    },
+    {
+     "hour": 60,
+     "attainment": 0.95997,
+     "gpus": 66,
+     "shed": 0.03994,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 61,
+     "attainment": 0.97253,
+     "gpus": 72,
+     "shed": 0.02744,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 62,
+     "attainment": 0.97067,
+     "gpus": 79,
+     "shed": 0.02882,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 63,
+     "attainment": 0.99985,
+     "gpus": 95,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 1
+    },
+    {
+     "hour": 64,
+     "attainment": 0.94152,
+     "gpus": 83,
+     "shed": 0.05767,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 65,
+     "attainment": 0.99946,
+     "gpus": 88,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 66,
+     "attainment": 0.74371,
+     "gpus": 76,
+     "shed": 0.25584,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 67,
+     "attainment": 0.95511,
+     "gpus": 87,
+     "shed": 0.04489,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 68,
+     "attainment": 0.99224,
+     "gpus": 73,
+     "shed": 0.00774,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 69,
+     "attainment": 0.99994,
+     "gpus": 62,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 70,
+     "attainment": 1.0,
+     "gpus": 54,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 71,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 72,
+     "attainment": 1.0,
+     "gpus": 44,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 73,
+     "attainment": 1.0,
+     "gpus": 43,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 74,
+     "attainment": 1.0,
+     "gpus": 41,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 75,
+     "attainment": 0.91041,
+     "gpus": 34,
+     "shed": 0.08955,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 76,
+     "attainment": 0.99998,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 77,
+     "attainment": 0.74024,
+     "gpus": 34,
+     "shed": 0.2597,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 78,
+     "attainment": 0.97749,
+     "gpus": 37,
+     "shed": 0.0225,
+     "train_gpus": 107.78073,
+     "preempted": 0
+    },
+    {
+     "hour": 79,
+     "attainment": 0.94207,
+     "gpus": 32,
+     "shed": 0.05788,
+     "train_gpus": 106.44045,
+     "preempted": 0
+    },
+    {
+     "hour": 80,
+     "attainment": 0.97034,
+     "gpus": 40,
+     "shed": 0.02963,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 81,
+     "attainment": 0.94385,
+     "gpus": 43,
+     "shed": 0.05613,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 82,
+     "attainment": 0.97644,
+     "gpus": 45,
+     "shed": 0.02351,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 83,
+     "attainment": 0.92789,
+     "gpus": 54,
+     "shed": 0.07202,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 84,
+     "attainment": 0.9654,
+     "gpus": 71,
+     "shed": 0.03458,
+     "train_gpus": 91.37433,
+     "preempted": 1
+    },
+    {
+     "hour": 85,
+     "attainment": 0.99035,
+     "gpus": 71,
+     "shed": 0.00963,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 86,
+     "attainment": 0.93728,
+     "gpus": 75,
+     "shed": 0.06242,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 87,
+     "attainment": 0.90946,
+     "gpus": 91,
+     "shed": 0.08841,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 88,
+     "attainment": 0.99998,
+     "gpus": 94,
+     "shed": 0.0,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 89,
+     "attainment": 0.88404,
+     "gpus": 78,
+     "shed": 0.11534,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 90,
+     "attainment": 0.99999,
+     "gpus": 94,
+     "shed": 0.0,
+     "train_gpus": 96.0,
+     "preempted": 1
+    },
+    {
+     "hour": 91,
+     "attainment": 0.99935,
+     "gpus": 76,
+     "shed": 0.0,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 92,
+     "attainment": 0.9998,
+     "gpus": 74,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 93,
+     "attainment": 1.0,
+     "gpus": 71,
+     "shed": 0.0,
+     "train_gpus": 93.59634,
+     "preempted": 0
+    },
+    {
+     "hour": 94,
+     "attainment": 0.92884,
+     "gpus": 57,
+     "shed": 0.07049,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 95,
+     "attainment": 1.0,
+     "gpus": 59,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 96,
+     "attainment": 1.0,
+     "gpus": 41,
+     "shed": 0.0,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 97,
+     "attainment": 1.0,
+     "gpus": 40,
+     "shed": 0.0,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 98,
+     "attainment": 1.0,
+     "gpus": 39,
+     "shed": 0.0,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 99,
+     "attainment": 0.98023,
+     "gpus": 35,
+     "shed": 0.01977,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 100,
+     "attainment": 1.0,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 101,
+     "attainment": 0.97403,
+     "gpus": 33,
+     "shed": 0.0259,
+     "train_gpus": 109.73404,
+     "preempted": 0
+    },
+    {
+     "hour": 102,
+     "attainment": 1.0,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 103,
+     "attainment": 0.96791,
+     "gpus": 35,
+     "shed": 0.03207,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 104,
+     "attainment": 0.95667,
+     "gpus": 37,
+     "shed": 0.04333,
+     "train_gpus": 90.02526,
+     "preempted": 0
+    },
+    {
+     "hour": 105,
+     "attainment": 0.92108,
+     "gpus": 38,
+     "shed": 0.07886,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 106,
+     "attainment": 0.91362,
+     "gpus": 45,
+     "shed": 0.08457,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 107,
+     "attainment": 0.95463,
+     "gpus": 51,
+     "shed": 0.04056,
+     "train_gpus": 81.18001,
+     "preempted": 1
+    },
+    {
+     "hour": 108,
+     "attainment": 0.99769,
+     "gpus": 64,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 109,
+     "attainment": 0.76394,
+     "gpus": 61,
+     "shed": 0.22631,
+     "train_gpus": 71.86097,
+     "preempted": 0
+    },
+    {
+     "hour": 110,
+     "attainment": 0.99836,
+     "gpus": 94,
+     "shed": 0.0,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 111,
+     "attainment": 0.96457,
+     "gpus": 82,
+     "shed": 0.03303,
+     "train_gpus": 56.37212,
+     "preempted": 0
+    },
+    {
+     "hour": 112,
+     "attainment": 0.98022,
+     "gpus": 86,
+     "shed": 0.01882,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 113,
+     "attainment": 0.96627,
+     "gpus": 85,
+     "shed": 0.02501,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 114,
+     "attainment": 0.87492,
+     "gpus": 92,
+     "shed": 0.12329,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 115,
+     "attainment": 0.98655,
+     "gpus": 89,
+     "shed": 0.0134,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 116,
+     "attainment": 0.98312,
+     "gpus": 68,
+     "shed": 0.00685,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 117,
+     "attainment": 0.99999,
+     "gpus": 71,
+     "shed": 0.0,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 118,
+     "attainment": 0.96219,
+     "gpus": 50,
+     "shed": 0.02453,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 119,
+     "attainment": 0.97574,
+     "gpus": 47,
+     "shed": 0.0187,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 120,
+     "attainment": 0.99991,
+     "gpus": 43,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 121,
+     "attainment": 0.99703,
+     "gpus": 25,
+     "shed": 0.00063,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 122,
+     "attainment": 0.96952,
+     "gpus": 21,
+     "shed": 0.02642,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 123,
+     "attainment": 1.0,
+     "gpus": 23,
+     "shed": 0.0,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 124,
+     "attainment": 1.0,
+     "gpus": 19,
+     "shed": 0.0,
+     "train_gpus": 120.74356,
+     "preempted": 0
+    },
+    {
+     "hour": 125,
+     "attainment": 0.91385,
+     "gpus": 18,
+     "shed": 0.08613,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 126,
+     "attainment": 0.98111,
+     "gpus": 18,
+     "shed": 0.01889,
+     "train_gpus": 128.0,
+     "preempted": 0
+    },
+    {
+     "hour": 127,
+     "attainment": 0.99871,
+     "gpus": 22,
+     "shed": 0.00128,
+     "train_gpus": 116.93243,
+     "preempted": 0
+    },
+    {
+     "hour": 128,
+     "attainment": 0.93313,
+     "gpus": 22,
+     "shed": 0.06675,
+     "train_gpus": 120.0,
+     "preempted": 0
+    },
+    {
+     "hour": 129,
+     "attainment": 0.82305,
+     "gpus": 27,
+     "shed": 0.17132,
+     "train_gpus": 114.55595,
+     "preempted": 1
+    },
+    {
+     "hour": 130,
+     "attainment": 0.95111,
+     "gpus": 42,
+     "shed": 0.04878,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 131,
+     "attainment": 0.98783,
+     "gpus": 44,
+     "shed": 0.00946,
+     "train_gpus": 104.79967,
+     "preempted": 0
+    },
+    {
+     "hour": 132,
+     "attainment": 0.89178,
+     "gpus": 45,
+     "shed": 0.09403,
+     "train_gpus": 96.02954,
+     "preempted": 0
+    },
+    {
+     "hour": 133,
+     "attainment": 0.99648,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 90.33466,
+     "preempted": 0
+    },
+    {
+     "hour": 134,
+     "attainment": 0.92471,
+     "gpus": 49,
+     "shed": 0.07037,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 135,
+     "attainment": 0.95175,
+     "gpus": 58,
+     "shed": 0.03757,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 136,
+     "attainment": 0.99325,
+     "gpus": 65,
+     "shed": 0.00163,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 137,
+     "attainment": 0.95977,
+     "gpus": 61,
+     "shed": 0.02811,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 138,
+     "attainment": 0.91411,
+     "gpus": 60,
+     "shed": 0.08313,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 139,
+     "attainment": 0.99714,
+     "gpus": 54,
+     "shed": 0.0,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 140,
+     "attainment": 0.96851,
+     "gpus": 46,
+     "shed": 0.02795,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 141,
+     "attainment": 0.99171,
+     "gpus": 46,
+     "shed": 0.00803,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 142,
+     "attainment": 0.99745,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 143,
+     "attainment": 0.99999,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 82.79646,
+     "preempted": 0
+    },
+    {
+     "hour": 144,
+     "attainment": 0.9722,
+     "gpus": 29,
+     "shed": 0.01612,
+     "train_gpus": 68.12941,
+     "preempted": 0
+    },
+    {
+     "hour": 145,
+     "attainment": 0.99875,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 146,
+     "attainment": 0.99989,
+     "gpus": 27,
+     "shed": 0.0,
+     "train_gpus": 55.96822,
+     "preempted": 0
+    },
+    {
+     "hour": 147,
+     "attainment": 0.99812,
+     "gpus": 24,
+     "shed": 0.0,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 148,
+     "attainment": 0.95071,
+     "gpus": 23,
+     "shed": 0.03482,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 149,
+     "attainment": 0.94967,
+     "gpus": 23,
+     "shed": 0.05031,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 150,
+     "attainment": 0.9604,
+     "gpus": 20,
+     "shed": 0.03543,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 151,
+     "attainment": 0.92178,
+     "gpus": 27,
+     "shed": 0.07187,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 152,
+     "attainment": 0.92244,
+     "gpus": 30,
+     "shed": 0.07704,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 153,
+     "attainment": 0.95076,
+     "gpus": 30,
+     "shed": 0.0402,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 154,
+     "attainment": 0.89017,
+     "gpus": 34,
+     "shed": 0.10289,
+     "train_gpus": 37.88999,
+     "preempted": 0
+    },
+    {
+     "hour": 155,
+     "attainment": 0.76076,
+     "gpus": 41,
+     "shed": 0.2379,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 156,
+     "attainment": 0.94673,
+     "gpus": 49,
+     "shed": 0.04001,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 157,
+     "attainment": 0.99256,
+     "gpus": 51,
+     "shed": 0.00567,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 158,
+     "attainment": 0.89191,
+     "gpus": 50,
+     "shed": 0.0941,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 159,
+     "attainment": 0.98614,
+     "gpus": 61,
+     "shed": 0.00834,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 160,
+     "attainment": 0.95064,
+     "gpus": 56,
+     "shed": 0.03639,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 161,
+     "attainment": 0.99982,
+     "gpus": 61,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 162,
+     "attainment": 0.99505,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 163,
+     "attainment": 0.97323,
+     "gpus": 53,
+     "shed": 0.0207,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 164,
+     "attainment": 0.99005,
+     "gpus": 56,
+     "shed": 0.00985,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 165,
+     "attainment": 0.99991,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 31.6161,
+     "preempted": 0
+    },
+    {
+     "hour": 166,
+     "attainment": 0.99949,
+     "gpus": 43,
+     "shed": 0.0,
+     "train_gpus": 28.0,
+     "preempted": 0
+    },
+    {
+     "hour": 167,
+     "attainment": 0.99896,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 28.0,
+     "preempted": 0
+    }
+   ],
+   "no_feedback": [
+    {
+     "hour": 0,
+     "attainment": 0.99996,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 1,
+     "attainment": 0.99998,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 2,
+     "attainment": 1.0,
+     "gpus": 34,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 3,
+     "attainment": 0.99608,
+     "gpus": 31,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 4,
+     "attainment": 0.92267,
+     "gpus": 30,
+     "shed": 0.07024,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 5,
+     "attainment": 0.9999,
+     "gpus": 33,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 6,
+     "attainment": 0.99945,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 7,
+     "attainment": 0.91259,
+     "gpus": 32,
+     "shed": 0.08173,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 8,
+     "attainment": 0.91943,
+     "gpus": 38,
+     "shed": 0.07482,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 9,
+     "attainment": 0.85029,
+     "gpus": 45,
+     "shed": 0.14937,
+     "train_gpus": 0.0,
+     "preempted": 0
+    },
+    {
+     "hour": 10,
+     "attainment": 0.99931,
+     "gpus": 55,
+     "shed": 0.00068,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 11,
+     "attainment": 0.9684,
+     "gpus": 52,
+     "shed": 0.0251,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 12,
+     "attainment": 0.89045,
+     "gpus": 62,
+     "shed": 0.10325,
+     "train_gpus": 8.0,
+     "preempted": 0
+    },
+    {
+     "hour": 13,
+     "attainment": 0.84746,
+     "gpus": 75,
+     "shed": 0.15253,
+     "train_gpus": 24.0,
+     "preempted": 1
+    },
+    {
+     "hour": 14,
+     "attainment": 0.98613,
+     "gpus": 90,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 15,
+     "attainment": 0.96784,
+     "gpus": 74,
+     "shed": 0.01778,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 16,
+     "attainment": 0.91212,
+     "gpus": 80,
+     "shed": 0.0272,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 17,
+     "attainment": 0.927,
+     "gpus": 74,
+     "shed": 0.01625,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 18,
+     "attainment": 0.9438,
+     "gpus": 76,
+     "shed": 0.01248,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 19,
+     "attainment": 0.96086,
+     "gpus": 71,
+     "shed": 5e-05,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 20,
+     "attainment": 0.97562,
+     "gpus": 71,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 21,
+     "attainment": 0.82772,
+     "gpus": 65,
+     "shed": 0.17227,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 22,
+     "attainment": 0.99407,
+     "gpus": 57,
+     "shed": 0.00318,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 23,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 24,
+     "attainment": 0.99979,
+     "gpus": 47,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 25,
+     "attainment": 0.99998,
+     "gpus": 41,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 26,
+     "attainment": 0.99999,
+     "gpus": 36,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 27,
+     "attainment": 0.99989,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 28,
+     "attainment": 0.9353,
+     "gpus": 32,
+     "shed": 0.05784,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 29,
+     "attainment": 0.99434,
+     "gpus": 33,
+     "shed": 0.00565,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 30,
+     "attainment": 0.89925,
+     "gpus": 32,
+     "shed": 0.0964,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 31,
+     "attainment": 0.99998,
+     "gpus": 46,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 32,
+     "attainment": 0.91611,
+     "gpus": 39,
+     "shed": 0.07864,
+     "train_gpus": 69.3464,
+     "preempted": 0
+    },
+    {
+     "hour": 33,
+     "attainment": 0.9087,
+     "gpus": 43,
+     "shed": 0.08586,
+     "train_gpus": 44.03417,
+     "preempted": 0
+    },
+    {
+     "hour": 34,
+     "attainment": 0.75139,
+     "gpus": 49,
+     "shed": 0.2435,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 35,
+     "attainment": 0.99333,
+     "gpus": 70,
+     "shed": 0.00606,
+     "train_gpus": 41.77536,
+     "preempted": 0
+    },
+    {
+     "hour": 36,
+     "attainment": 0.81198,
+     "gpus": 65,
+     "shed": 0.18081,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 37,
+     "attainment": 0.99497,
+     "gpus": 88,
+     "shed": 0.00503,
+     "train_gpus": 32.0,
+     "preempted": 1
+    },
+    {
+     "hour": 38,
+     "attainment": 0.73983,
+     "gpus": 82,
+     "shed": 0.21434,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 39,
+     "attainment": 0.94845,
+     "gpus": 110,
+     "shed": 0.0,
+     "train_gpus": 16.0,
+     "preempted": 2
+    },
+    {
+     "hour": 40,
+     "attainment": 0.93707,
+     "gpus": 88,
+     "shed": 0.00989,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 41,
+     "attainment": 0.9307,
+     "gpus": 85,
+     "shed": 0.0015,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 42,
+     "attainment": 0.90809,
+     "gpus": 84,
+     "shed": 0.02088,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 43,
+     "attainment": 0.94387,
+     "gpus": 94,
+     "shed": 0.0,
+     "train_gpus": 40.0,
+     "preempted": 1
+    },
+    {
+     "hour": 44,
+     "attainment": 0.92832,
+     "gpus": 74,
+     "shed": 0.02669,
+     "train_gpus": 36.66124,
+     "preempted": 0
+    },
+    {
+     "hour": 45,
+     "attainment": 0.96833,
+     "gpus": 77,
+     "shed": 0.0,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 46,
+     "attainment": 0.97264,
+     "gpus": 54,
+     "shed": 0.00651,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 47,
+     "attainment": 0.98449,
+     "gpus": 49,
+     "shed": 0.00379,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 48,
+     "attainment": 0.98718,
+     "gpus": 46,
+     "shed": 0.01273,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 49,
+     "attainment": 0.99784,
+     "gpus": 40,
+     "shed": 0.00216,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 50,
+     "attainment": 0.98322,
+     "gpus": 32,
+     "shed": 0.01677,
+     "train_gpus": 55.48462,
+     "preempted": 0
+    },
+    {
+     "hour": 51,
+     "attainment": 0.99821,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 52.0,
+     "preempted": 0
+    },
+    {
+     "hour": 52,
+     "attainment": 0.87987,
+     "gpus": 30,
+     "shed": 0.11389,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 53,
+     "attainment": 0.9181,
+     "gpus": 36,
+     "shed": 0.07608,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 54,
+     "attainment": 1.0,
+     "gpus": 40,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 1
+    },
+    {
+     "hour": 55,
+     "attainment": 0.95621,
+     "gpus": 35,
+     "shed": 0.04037,
+     "train_gpus": 70.59155,
+     "preempted": 0
+    },
+    {
+     "hour": 56,
+     "attainment": 0.95567,
+     "gpus": 38,
+     "shed": 0.04184,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 57,
+     "attainment": 0.95525,
+     "gpus": 49,
+     "shed": 0.03688,
+     "train_gpus": 53.96619,
+     "preempted": 0
+    },
+    {
+     "hour": 58,
+     "attainment": 0.78331,
+     "gpus": 48,
+     "shed": 0.21518,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 59,
+     "attainment": 0.95758,
+     "gpus": 63,
+     "shed": 0.03478,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 60,
+     "attainment": 0.89474,
+     "gpus": 71,
+     "shed": 0.05993,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 61,
+     "attainment": 0.93473,
+     "gpus": 74,
+     "shed": 0.02533,
+     "train_gpus": 44.0,
+     "preempted": 1
+    },
+    {
+     "hour": 62,
+     "attainment": 0.9272,
+     "gpus": 80,
+     "shed": 0.03157,
+     "train_gpus": 48.0,
+     "preempted": 1
+    },
+    {
+     "hour": 63,
+     "attainment": 0.91235,
+     "gpus": 118,
+     "shed": 0.0,
+     "train_gpus": 32.0,
+     "preempted": 2
+    },
+    {
+     "hour": 64,
+     "attainment": 0.86886,
+     "gpus": 103,
+     "shed": 0.05705,
+     "train_gpus": 36.0,
+     "preempted": 0
+    },
+    {
+     "hour": 65,
+     "attainment": 0.91488,
+     "gpus": 109,
+     "shed": 0.0,
+     "train_gpus": 44.0,
+     "preempted": 0
+    },
+    {
+     "hour": 66,
+     "attainment": 0.67768,
+     "gpus": 89,
+     "shed": 0.25862,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 67,
+     "attainment": 0.8879,
+     "gpus": 99,
+     "shed": 0.04706,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 68,
+     "attainment": 0.94789,
+     "gpus": 76,
+     "shed": 0.00335,
+     "train_gpus": 61.85908,
+     "preempted": 0
+    },
+    {
+     "hour": 69,
+     "attainment": 0.99364,
+     "gpus": 67,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 70,
+     "attainment": 1.0,
+     "gpus": 57,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 71,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 72,
+     "attainment": 0.99998,
+     "gpus": 48,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 73,
+     "attainment": 1.0,
+     "gpus": 44,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 74,
+     "attainment": 0.99877,
+     "gpus": 41,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 75,
+     "attainment": 0.89306,
+     "gpus": 34,
+     "shed": 0.10622,
+     "train_gpus": 80.41458,
+     "preempted": 0
+    },
+    {
+     "hour": 76,
+     "attainment": 0.9714,
+     "gpus": 37,
+     "shed": 0.02118,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 77,
+     "attainment": 0.7375,
+     "gpus": 35,
+     "shed": 0.26232,
+     "train_gpus": 91.78073,
+     "preempted": 0
+    },
+    {
+     "hour": 78,
+     "attainment": 0.99962,
+     "gpus": 38,
+     "shed": 0.0,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 79,
+     "attainment": 0.91003,
+     "gpus": 34,
+     "shed": 0.08516,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 80,
+     "attainment": 0.94523,
+     "gpus": 42,
+     "shed": 0.04985,
+     "train_gpus": 83.45318,
+     "preempted": 0
+    },
+    {
+     "hour": 81,
+     "attainment": 0.93451,
+     "gpus": 47,
+     "shed": 0.06479,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 82,
+     "attainment": 0.95643,
+     "gpus": 49,
+     "shed": 0.03874,
+     "train_gpus": 85.65012,
+     "preempted": 0
+    },
+    {
+     "hour": 83,
+     "attainment": 0.91719,
+     "gpus": 58,
+     "shed": 0.07515,
+     "train_gpus": 80.0,
+     "preempted": 0
+    },
+    {
+     "hour": 84,
+     "attainment": 0.93857,
+     "gpus": 75,
+     "shed": 0.06143,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 85,
+     "attainment": 0.94417,
+     "gpus": 73,
+     "shed": 0.02741,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 86,
+     "attainment": 0.89985,
+     "gpus": 77,
+     "shed": 0.06829,
+     "train_gpus": 96.0,
+     "preempted": 0
+    },
+    {
+     "hour": 87,
+     "attainment": 0.80337,
+     "gpus": 126,
+     "shed": 0.07143,
+     "train_gpus": 48.0,
+     "preempted": 5
+    },
+    {
+     "hour": 88,
+     "attainment": 0.85849,
+     "gpus": 123,
+     "shed": 0.01235,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 89,
+     "attainment": 0.81398,
+     "gpus": 104,
+     "shed": 0.09977,
+     "train_gpus": 60.0,
+     "preempted": 0
+    },
+    {
+     "hour": 90,
+     "attainment": 0.99943,
+     "gpus": 111,
+     "shed": 0.0,
+     "train_gpus": 68.0,
+     "preempted": 0
+    },
+    {
+     "hour": 91,
+     "attainment": 0.98721,
+     "gpus": 96,
+     "shed": 0.0,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 92,
+     "attainment": 0.99998,
+     "gpus": 93,
+     "shed": 0.0,
+     "train_gpus": 76.47503,
+     "preempted": 0
+    },
+    {
+     "hour": 93,
+     "attainment": 1.0,
+     "gpus": 89,
+     "shed": 0.0,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 94,
+     "attainment": 0.92515,
+     "gpus": 72,
+     "shed": 0.07418,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 95,
+     "attainment": 1.0,
+     "gpus": 74,
+     "shed": 0.0,
+     "train_gpus": 84.37922,
+     "preempted": 0
+    },
+    {
+     "hour": 96,
+     "attainment": 1.0,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 97,
+     "attainment": 0.99199,
+     "gpus": 41,
+     "shed": 0.00798,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 98,
+     "attainment": 1.0,
+     "gpus": 40,
+     "shed": 0.0,
+     "train_gpus": 101.41225,
+     "preempted": 0
+    },
+    {
+     "hour": 99,
+     "attainment": 0.97794,
+     "gpus": 34,
+     "shed": 0.02206,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 100,
+     "attainment": 0.96481,
+     "gpus": 34,
+     "shed": 0.03519,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 101,
+     "attainment": 0.9874,
+     "gpus": 31,
+     "shed": 0.01258,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 102,
+     "attainment": 0.99999,
+     "gpus": 35,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 103,
+     "attainment": 0.96256,
+     "gpus": 35,
+     "shed": 0.03744,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 104,
+     "attainment": 0.94985,
+     "gpus": 38,
+     "shed": 0.05013,
+     "train_gpus": 90.09616,
+     "preempted": 0
+    },
+    {
+     "hour": 105,
+     "attainment": 0.92172,
+     "gpus": 40,
+     "shed": 0.07826,
+     "train_gpus": 84.0,
+     "preempted": 0
+    },
+    {
+     "hour": 106,
+     "attainment": 0.93026,
+     "gpus": 51,
+     "shed": 0.06971,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 107,
+     "attainment": 0.95044,
+     "gpus": 57,
+     "shed": 0.04953,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 108,
+     "attainment": 0.99485,
+     "gpus": 70,
+     "shed": 0.00515,
+     "train_gpus": 89.87144,
+     "preempted": 0
+    },
+    {
+     "hour": 109,
+     "attainment": 0.76057,
+     "gpus": 69,
+     "shed": 0.21701,
+     "train_gpus": 85.05539,
+     "preempted": 0
+    },
+    {
+     "hour": 110,
+     "attainment": 0.99999,
+     "gpus": 112,
+     "shed": 0.0,
+     "train_gpus": 56.0,
+     "preempted": 1
+    },
+    {
+     "hour": 111,
+     "attainment": 0.90842,
+     "gpus": 97,
+     "shed": 0.04155,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 112,
+     "attainment": 0.92051,
+     "gpus": 100,
+     "shed": 0.02315,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 113,
+     "attainment": 0.86872,
+     "gpus": 102,
+     "shed": 0.03655,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 114,
+     "attainment": 0.80627,
+     "gpus": 110,
+     "shed": 0.12312,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 115,
+     "attainment": 0.89674,
+     "gpus": 107,
+     "shed": 0.01079,
+     "train_gpus": 64.0,
+     "preempted": 0
+    },
+    {
+     "hour": 116,
+     "attainment": 0.9044,
+     "gpus": 70,
+     "shed": 0.02148,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 117,
+     "attainment": 0.99893,
+     "gpus": 74,
+     "shed": 0.0,
+     "train_gpus": 76.0,
+     "preempted": 1
+    },
+    {
+     "hour": 118,
+     "attainment": 0.92042,
+     "gpus": 53,
+     "shed": 0.0398,
+     "train_gpus": 76.0,
+     "preempted": 0
+    },
+    {
+     "hour": 119,
+     "attainment": 0.99995,
+     "gpus": 51,
+     "shed": 0.0,
+     "train_gpus": 92.0,
+     "preempted": 0
+    },
+    {
+     "hour": 120,
+     "attainment": 1.0,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 121,
+     "attainment": 1.0,
+     "gpus": 32,
+     "shed": 0.0,
+     "train_gpus": 108.0,
+     "preempted": 0
+    },
+    {
+     "hour": 122,
+     "attainment": 0.94927,
+     "gpus": 23,
+     "shed": 0.05071,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 123,
+     "attainment": 1.0,
+     "gpus": 27,
+     "shed": 0.0,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 124,
+     "attainment": 1.0,
+     "gpus": 23,
+     "shed": 0.0,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 125,
+     "attainment": 0.97674,
+     "gpus": 23,
+     "shed": 0.02326,
+     "train_gpus": 124.0,
+     "preempted": 0
+    },
+    {
+     "hour": 126,
+     "attainment": 0.98053,
+     "gpus": 21,
+     "shed": 0.01947,
+     "train_gpus": 132.0,
+     "preempted": 0
+    },
+    {
+     "hour": 127,
+     "attainment": 0.99404,
+     "gpus": 28,
+     "shed": 0.00596,
+     "train_gpus": 123.90447,
+     "preempted": 0
+    },
+    {
+     "hour": 128,
+     "attainment": 0.88627,
+     "gpus": 31,
+     "shed": 0.11373,
+     "train_gpus": 124.0,
+     "preempted": 1
+    },
+    {
+     "hour": 129,
+     "attainment": 0.83475,
+     "gpus": 33,
+     "shed": 0.16524,
+     "train_gpus": 115.41343,
+     "preempted": 0
+    },
+    {
+     "hour": 130,
+     "attainment": 0.93624,
+     "gpus": 47,
+     "shed": 0.06376,
+     "train_gpus": 112.0,
+     "preempted": 0
+    },
+    {
+     "hour": 131,
+     "attainment": 0.99863,
+     "gpus": 53,
+     "shed": 0.00137,
+     "train_gpus": 108.79967,
+     "preempted": 0
+    },
+    {
+     "hour": 132,
+     "attainment": 0.89932,
+     "gpus": 53,
+     "shed": 0.10065,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 133,
+     "attainment": 1.0,
+     "gpus": 59,
+     "shed": 0.0,
+     "train_gpus": 104.0,
+     "preempted": 0
+    },
+    {
+     "hour": 134,
+     "attainment": 0.94216,
+     "gpus": 57,
+     "shed": 0.05783,
+     "train_gpus": 98.61764,
+     "preempted": 0
+    },
+    {
+     "hour": 135,
+     "attainment": 0.97032,
+     "gpus": 65,
+     "shed": 0.02966,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 136,
+     "attainment": 1.0,
+     "gpus": 70,
+     "shed": 0.0,
+     "train_gpus": 88.0,
+     "preempted": 0
+    },
+    {
+     "hour": 137,
+     "attainment": 0.9471,
+     "gpus": 63,
+     "shed": 0.05287,
+     "train_gpus": 76.40738,
+     "preempted": 0
+    },
+    {
+     "hour": 138,
+     "attainment": 0.91934,
+     "gpus": 65,
+     "shed": 0.08066,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 139,
+     "attainment": 0.99789,
+     "gpus": 62,
+     "shed": 0.00211,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 140,
+     "attainment": 0.98434,
+     "gpus": 57,
+     "shed": 0.01566,
+     "train_gpus": 72.0,
+     "preempted": 0
+    },
+    {
+     "hour": 141,
+     "attainment": 1.0,
+     "gpus": 52,
+     "shed": 0.0,
+     "train_gpus": 60.17076,
+     "preempted": 0
+    },
+    {
+     "hour": 142,
+     "attainment": 0.99978,
+     "gpus": 44,
+     "shed": 0.00022,
+     "train_gpus": 56.0,
+     "preempted": 0
+    },
+    {
+     "hour": 143,
+     "attainment": 1.0,
+     "gpus": 45,
+     "shed": 0.0,
+     "train_gpus": 54.79646,
+     "preempted": 0
+    },
+    {
+     "hour": 144,
+     "attainment": 0.97818,
+     "gpus": 34,
+     "shed": 0.0218,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 145,
+     "attainment": 1.0,
+     "gpus": 37,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 146,
+     "attainment": 1.0,
+     "gpus": 28,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 147,
+     "attainment": 1.0,
+     "gpus": 25,
+     "shed": 0.0,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 148,
+     "attainment": 0.96865,
+     "gpus": 25,
+     "shed": 0.03132,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 149,
+     "attainment": 0.92995,
+     "gpus": 22,
+     "shed": 0.07005,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 150,
+     "attainment": 0.96508,
+     "gpus": 22,
+     "shed": 0.03492,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 151,
+     "attainment": 0.92155,
+     "gpus": 29,
+     "shed": 0.07843,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 152,
+     "attainment": 0.89405,
+     "gpus": 33,
+     "shed": 0.10595,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 153,
+     "attainment": 0.94812,
+     "gpus": 33,
+     "shed": 0.05186,
+     "train_gpus": 48.0,
+     "preempted": 0
+    },
+    {
+     "hour": 154,
+     "attainment": 0.88867,
+     "gpus": 39,
+     "shed": 0.11132,
+     "train_gpus": 41.88999,
+     "preempted": 0
+    },
+    {
+     "hour": 155,
+     "attainment": 0.75081,
+     "gpus": 44,
+     "shed": 0.24919,
+     "train_gpus": 40.0,
+     "preempted": 0
+    },
+    {
+     "hour": 156,
+     "attainment": 0.96042,
+     "gpus": 54,
+     "shed": 0.03955,
+     "train_gpus": 40.0,
+     "preempted": 0
+    },
+    {
+     "hour": 157,
+     "attainment": 0.99837,
+     "gpus": 58,
+     "shed": 0.00163,
+     "train_gpus": 33.53131,
+     "preempted": 0
+    },
+    {
+     "hour": 158,
+     "attainment": 0.91591,
+     "gpus": 60,
+     "shed": 0.08407,
+     "train_gpus": 32.0,
+     "preempted": 0
+    },
+    {
+     "hour": 159,
+     "attainment": 1.0,
+     "gpus": 66,
+     "shed": 0.0,
+     "train_gpus": 29.00294,
+     "preempted": 0
+    },
+    {
+     "hour": 160,
+     "attainment": 0.98077,
+     "gpus": 61,
+     "shed": 0.01923,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 161,
+     "attainment": 1.0,
+     "gpus": 66,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 162,
+     "attainment": 1.0,
+     "gpus": 60,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 163,
+     "attainment": 0.97034,
+     "gpus": 58,
+     "shed": 0.02966,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 164,
+     "attainment": 0.97638,
+     "gpus": 58,
+     "shed": 0.02362,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 165,
+     "attainment": 1.0,
+     "gpus": 50,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 166,
+     "attainment": 1.0,
+     "gpus": 49,
+     "shed": 0.0,
+     "train_gpus": 24.0,
+     "preempted": 0
+    },
+    {
+     "hour": 167,
+     "attainment": 1.0,
+     "gpus": 42,
+     "shed": 0.0,
+     "train_gpus": 19.95939,
+     "preempted": 0
+    }
+   ]
+  },
+  "demand_rps": [
+   843.19436,
+   730.54948,
+   671.43668,
+   619.23485,
+   655.64831,
+   669.59309,
+   716.76141,
+   816.64852,
+   971.05627,
+   1157.41979,
+   1186.09513,
+   1283.09356,
+   1470.30656,
+   1770.01213,
+   1497.21393,
+   1453.12437,
+   1467.96167,
+   1432.54301,
+   1395.35418,
+   1388.41927,
+   1243.01611,
+   1439.04486,
+   1058.72986,
+   977.09815,
+   770.25603,
+   743.49598,
+   604.10358,
+   641.21655,
+   676.77129,
+   668.41518,
+   852.33679,
+   764.03417,
+   887.31177,
+   1027.58585,
+   1452.40306,
+   1193.04666,
+   1555.86786,
+   1484.62169,
+   1936.06426,
+   1555.75097,
+   1536.83154,
+   1499.88025,
+   1518.1538,
+   1339.5191,
+   1341.75374,
+   1078.57475,
+   975.84185,
+   939.55636,
+   817.08244,
+   640.33162,
+   632.56277,
+   624.57,
+   741.99659,
+   797.0958,
+   737.16483,
+   818.2204,
+   955.77021,
+   941.08268,
+   1257.89317,
+   1333.1968,
+   1427.6257,
+   1548.01158,
+   1647.69467,
+   1498.75086,
+   1646.50273,
+   1438.00617,
+   1916.81209,
+   1365.44745,
+   1251.08966,
+   1061.04173,
+   982.47754,
+   910.14003,
+   823.837,
+   721.18995,
+   596.6344,
+   717.27095,
+   623.94742,
+   876.92992,
+   761.53383,
+   883.7262,
+   945.96328,
+   1064.39792,
+   1156.20511,
+   1328.74342,
+   1412.83939,
+   1454.33356,
+   1598.75684,
+   1644.44615,
+   1473.52208,
+   1707.22083,
+   1429.36507,
+   1380.58125,
+   1301.33557,
+   1105.91725,
+   1237.72267,
+   795.64001,
+   745.46455,
+   703.18337,
+   688.94441,
+   646.60586,
+   674.39454,
+   731.24543,
+   755.22227,
+   822.86045,
+   932.0729,
+   1086.32891,
+   1188.24856,
+   1320.29508,
+   1330.55579,
+   1815.71231,
+   1512.41587,
+   1625.51842,
+   1693.56395,
+   1666.20035,
+   1818.25436,
+   1319.16026,
+   1374.39012,
+   974.28959,
+   1022.29703,
+   938.68113,
+   602.60902,
+   497.69811,
+   517.88049,
+   487.0712,
+   493.54055,
+   559.90806,
+   639.53922,
+   615.23032,
+   745.59524,
+   929.36826,
+   1033.05649,
+   1028.85951,
+   1178.20119,
+   1190.24756,
+   1324.14132,
+   1410.52917,
+   1239.40227,
+   1207.84726,
+   1277.07037,
+   1072.58863,
+   1018.92979,
+   892.99747,
+   813.15538,
+   654.3712,
+   714.85944,
+   606.27395,
+   553.45562,
+   502.3621,
+   504.73322,
+   574.68316,
+   685.0897,
+   656.97545,
+   771.66399,
+   809.28523,
+   979.13509,
+   1311.38163,
+   1180.55272,
+   1108.41579,
+   1280.99359,
+   1175.5418,
+   1243.35063,
+   1286.90319,
+   1214.6694,
+   1106.45393,
+   1056.20066,
+   995.20322,
+   792.21017,
+   624.68681
+  ],
+  "peak_hour": 38,
+  "peak_mix_gpus": {
+   "llama-70b": {
+    "B200": 12
+   },
+   "mixtral-8x7b": {
+    "B200": 4,
+    "MI300X": 4
+   },
+   "codellama-34b": {
+    "H100": 16
+   },
+   "llama-13b": {
+    "MI300X": 20,
+    "H100": 4
+   },
+   "llama-8b": {
+    "H100": 18
+   }
+  },
+  "peak_shapes": [
+   {
+    "model": "codellama-34b",
+    "gpu": "H100",
+    "tp": 4,
+    "batch": 256,
+    "source": "learned"
+   },
+   {
+    "model": "llama-13b",
+    "gpu": "H100",
+    "tp": 4,
+    "batch": 192,
+    "source": "learned"
+   },
+   {
+    "model": "llama-13b",
+    "gpu": "MI300X",
+    "tp": 1,
+    "batch": 128,
+    "source": "learned"
+   },
+   {
+    "model": "llama-70b",
+    "gpu": "B200",
+    "tp": 2,
+    "batch": 256,
+    "source": "fallback"
+   },
+   {
+    "model": "llama-8b",
+    "gpu": "H100",
+    "tp": 1,
+    "batch": 256,
+    "source": "learned"
+   },
+   {
+    "model": "mixtral-8x7b",
+    "gpu": "B200",
+    "tp": 1,
+    "batch": 256,
+    "source": "fallback"
+   },
+   {
+    "model": "mixtral-8x7b",
+    "gpu": "MI300X",
+    "tp": 2,
+    "batch": 256,
+    "source": "learned"
+   }
+  ],
+  "fleet": {
+   "V100": 24,
+   "A100": 40,
+   "L40S": 48,
+   "H100": 40,
+   "MI300X": 24,
+   "B200": 16
+  },
+  "drift": [
+   {
+    "gpu": "L40S",
+    "from_hour": 50,
+    "mem": 0.78,
+    "compute": 0.8
+   },
+   {
+    "gpu": "MI300X",
+    "from_hour": 96,
+    "mem": 1.15,
+    "compute": 1.1
+   }
+  ],
+  "events": [
+   {
+    "hour": 37,
+    "event": "drift",
+    "gpu": "A100",
+    "log_ratio": -0.34
+   },
+   {
+    "hour": 39,
+    "event": "drift",
+    "gpu": "A100",
+    "log_ratio": -0.219
+   },
+   {
+    "hour": 96,
+    "event": "drift",
+    "gpu": "MI300X",
+    "log_ratio": -0.161
+   }
+  ],
+  "train": {
+   "points": 214,
+   "members": 5,
+   "train_rmse_log": 0.0357
+  },
+  "occupancy": [
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 6
+     },
+     "MI300X": {
+      "llama-13b": 12,
+      "llama-8b": 10
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 6
+     },
+     "MI300X": {
+      "llama-13b": 12,
+      "llama-8b": 10
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "llama-13b": 12,
+      "llama-8b": 9
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 8
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 7
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 7
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 3,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 10
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 11
+     },
+     "H100": {
+      "llama-13b": 8
+     }
+    },
+    "train": {},
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-13b": 8,
+      "llama-8b": 3
+     },
+     "MI300X": {
+      "llama-13b": 14,
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "H100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-13b": 4,
+      "llama-8b": 3
+     },
+     "MI300X": {
+      "llama-13b": 14,
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "H100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 4,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 18,
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "H100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 6,
+      "codellama-34b": 2
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 18
+     },
+     "MI300X": {
+      "llama-13b": 24
+     }
+    },
+    "train": {
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-8b": 24
+     },
+     "MI300X": {
+      "llama-13b": 24
+     }
+    },
+    "train": {
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "MI300X": {
+      "mixtral-8x7b": 1,
+      "llama-8b": 19
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 28
+     }
+    },
+    "train": {
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 16,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-13b": 6,
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 20,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "llama-13b": 2,
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 20,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-13b": 5,
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 20,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-8b": 14
+     },
+     "MI300X": {
+      "llama-13b": 21,
+      "llama-8b": 3
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-8b": 14
+     },
+     "MI300X": {
+      "llama-13b": 19,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 14
+     },
+     "MI300X": {
+      "llama-13b": 14,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 6
+     },
+     "MI300X": {
+      "llama-13b": 14
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 6
+     },
+     "MI300X": {
+      "llama-13b": 12
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 3
+     },
+     "MI300X": {
+      "llama-13b": 11
+     }
+    },
+    "train": {
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 3
+     },
+     "MI300X": {
+      "llama-13b": 11
+     }
+    },
+    "train": {
+     "A100": 32,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 3
+     },
+     "H100": {
+      "codellama-34b": 12
+     },
+     "MI300X": {
+      "llama-13b": 10
+     }
+    },
+    "train": {
+     "H100": 24,
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 4
+     },
+     "H100": {
+      "codellama-34b": 8
+     },
+     "MI300X": {
+      "llama-13b": 9
+     }
+    },
+    "train": {
+     "H100": 24,
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "llama-13b": 2,
+      "llama-8b": 4
+     },
+     "H100": {
+      "codellama-34b": 8
+     },
+     "MI300X": {
+      "llama-13b": 9
+     }
+    },
+    "train": {
+     "H100": 24,
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 2,
+      "llama-8b": 4
+     },
+     "H100": {
+      "codellama-34b": 8
+     },
+     "MI300X": {
+      "llama-13b": 6
+     }
+    },
+    "train": {
+     "H100": 28,
+     "A100": 32
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 8
+     },
+     "MI300X": {
+      "llama-13b": 9
+     }
+    },
+    "train": {
+     "H100": 24,
+     "A100": 36
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-8b": 7
+     },
+     "MI300X": {
+      "llama-13b": 8
+     }
+    },
+    "train": {
+     "H100": 24,
+     "A100": 36
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-13b": 8,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 8
+     }
+    },
+    "train": {
+     "H100": 16,
+     "A100": 36,
+     "L40S": 8
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 2,
+      "llama-13b": 4
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-8b": 13
+     },
+     "MI300X": {
+      "llama-13b": 8
+     }
+    },
+    "train": {
+     "A100": 36,
+     "L40S": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 17
+     },
+     "MI300X": {
+      "llama-13b": 24
+     }
+    },
+    "train": {
+     "A100": 36,
+     "L40S": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 4,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 24
+     }
+    },
+    "train": {
+     "A100": 28,
+     "L40S": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 8,
+      "llama-8b": 16
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "A100": {
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "A100": 28,
+     "L40S": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "MI300X": {
+      "mixtral-8x7b": 4,
+      "llama-13b": 20
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 4,
+      "llama-8b": 18
+     }
+    },
+    "train": {
+     "A100": 28,
+     "L40S": 8
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 4,
+      "llama-8b": 20
+     },
+     "MI300X": {
+      "llama-13b": 23,
+      "llama-8b": 1
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "A100": 24,
+     "L40S": 8
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 4,
+      "llama-8b": 19
+     },
+     "MI300X": {
+      "llama-13b": 23
+     }
+    },
+    "train": {
+     "A100": 40,
+     "L40S": 8
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 16,
+      "llama-13b": 4,
+      "llama-8b": 16
+     },
+     "MI300X": {
+      "llama-13b": 23,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "A100": 40,
+     "L40S": 8
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 16,
+      "llama-8b": 16
+     },
+     "MI300X": {
+      "llama-13b": 23,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "A100": 40,
+     "L40S": 8
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 20,
+      "llama-13b": 8,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "A100": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "A100": 28,
+     "L40S": 16
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 16,
+      "llama-13b": 4,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "A100": {
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-8b": 11
+     },
+     "MI300X": {
+      "llama-13b": 21
+     },
+     "A100": {
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 20
+    },
+    "drifting": [
+     "A100"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 11
+     },
+     "MI300X": {
+      "llama-13b": 15
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 36,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 9
+     },
+     "MI300X": {
+      "llama-13b": 14
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 36,
+     "H100": 16,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 9
+     },
+     "MI300X": {
+      "llama-13b": 13
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 36,
+     "MI300X": 8,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 8
+     },
+     "MI300X": {
+      "llama-13b": 13
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "MI300X": 8,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 11
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "MI300X": 8,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "MI300X": 8,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "MI300X": 8,
+     "H100": 20
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 5,
+      "llama-13b": 2,
+      "llama-8b": 2
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 20,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 4,
+      "llama-8b": 2
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 20,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 4,
+      "llama-8b": 2
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 5
+     },
+     "MI300X": {
+      "llama-13b": 2
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 20,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-13b": 6
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 2
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 20,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 11
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 4,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-13b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-8b": 10
+     },
+     "MI300X": {
+      "llama-13b": 11
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 20,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 4,
+      "llama-13b": 2
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-8b": 16
+     },
+     "MI300X": {
+      "llama-13b": 16
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28,
+     "H100": 4,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 24,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 28
+     },
+     "MI300X": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 28
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 24
+     },
+     "MI300X": {
+      "llama-13b": 4,
+      "llama-8b": 19
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 28
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 16,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-13b": 12,
+      "llama-8b": 12
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 16,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-13b": 6,
+      "llama-8b": 12
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 20,
+      "llama-13b": 16
+     },
+     "MI300X": {
+      "llama-13b": 6,
+      "llama-8b": 12
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 8,
+      "codellama-34b": 16,
+      "llama-13b": 16
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 12
+     },
+     "A100": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 4,
+      "llama-8b": 2
+     },
+     "H100": {
+      "mixtral-8x7b": 8,
+      "codellama-34b": 16,
+      "llama-13b": 16
+     },
+     "MI300X": {
+      "llama-13b": 6,
+      "llama-8b": 17
+     },
+     "A100": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 24
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 4,
+      "llama-13b": 2
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 24,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 4,
+      "llama-8b": 15
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-8b": 15
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 20
+     },
+     "MI300X": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 16
+     },
+     "MI300X": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 11
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 9
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 2
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 5
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "H100": 16,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "llama-13b": 2,
+      "llama-8b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-8b": 5
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 40,
+     "MI300X": 8,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 2,
+      "llama-8b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 8
+     },
+     "MI300X": {
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "H100": 16,
+     "A100": 40,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 5,
+      "llama-13b": 4,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 7
+     },
+     "MI300X": {
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "H100": 16,
+     "A100": 40,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-13b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 7
+     },
+     "MI300X": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "H100": 16,
+     "A100": 40,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-13b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 7
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "H100": 16,
+     "A100": 40,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 24,
+      "llama-8b": 8
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 40,
+     "MI300X": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 28
+     },
+     "MI300X": {
+      "llama-13b": 2,
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 40,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 28
+     },
+     "MI300X": {
+      "llama-8b": 15
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 24,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 24
+     },
+     "MI300X": {
+      "llama-13b": 2,
+      "llama-8b": 17
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 24,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 14,
+      "mixtral-8x7b": 2
+     },
+     "H100": {
+      "mixtral-8x7b": 10,
+      "codellama-34b": 20,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 8,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 1
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 2,
+      "llama-13b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 8,
+      "codellama-34b": 16,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 8,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 3,
+      "llama-13b": 2
+     },
+     "H100": {
+      "mixtral-8x7b": 8,
+      "codellama-34b": 16,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "llama-13b": 10
+     },
+     "A100": {
+      "llama-8b": 24
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 8,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "mixtral-8x7b": 8,
+      "codellama-34b": 20,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 14,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 24
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 20
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 20
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "codellama-34b": 16,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 20
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "codellama-34b": 12,
+      "llama-13b": 12
+     },
+     "MI300X": {
+      "llama-13b": 4,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 16
+     },
+     "MI300X": {
+      "llama-13b": 10,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 16
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 16,
+     "V100": 16,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "V100": 16,
+     "H100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-13b": 4,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12
+     },
+     "MI300X": {
+      "llama-8b": 6
+     },
+     "A100": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "H100": 16,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 4,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 12
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "H100": 16,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-13b": 4,
+      "llama-8b": 2
+     },
+     "H100": {
+      "codellama-34b": 8
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "H100": 16,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "codellama-34b": 8,
+      "llama-13b": 6
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "H100": 16,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 8
+     },
+     "H100": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "H100": 16,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 8
+     },
+     "H100": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [
+     "MI300X"
+    ],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 16
+     },
+     "H100": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 16,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 16,
+      "llama-8b": 6
+     },
+     "H100": {
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "H100": {
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 4,
+      "llama-13b": 16
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 20,
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 36,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 16,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "MI300X": {
+      "mixtral-8x7b": 12,
+      "codellama-34b": 12
+     },
+     "H100": {
+      "codellama-34b": 4,
+      "llama-13b": 28,
+      "llama-8b": 8
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 8,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 2
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 28,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 8,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 28,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 8,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 6,
+      "codellama-34b": 4,
+      "llama-13b": 24,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 28
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 8,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 12,
+      "mixtral-8x7b": 4
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 28,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 24
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "A100": 12,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 4,
+      "llama-8b": 2
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-13b": 28,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 24
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 12,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "H100": {
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-13b": 12,
+      "llama-8b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "A100": 12,
+     "V100": 16,
+     "H100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 20,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 8,
+     "A100": 12,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 12,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "A100": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16,
+     "MI300X": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "llama-13b": 8
+     },
+     "MI300X": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16,
+     "MI300X": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "llama-13b": 4
+     },
+     "MI300X": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16,
+     "MI300X": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "llama-13b": 4
+     },
+     "MI300X": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 24,
+     "A100": 28,
+     "V100": 16,
+     "MI300X": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-13b": 2,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 4
+     },
+     "MI300X": {
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 32,
+     "A100": 28,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 4,
+      "llama-8b": 1
+     },
+     "H100": {
+      "llama-13b": 4
+     },
+     "MI300X": {
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 32,
+     "A100": 28,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "H100": {
+      "llama-13b": 4
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 32,
+     "A100": 36,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 16,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "H100": {
+      "llama-8b": 11
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 16,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 6
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "H100": {
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 16,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-13b": 16
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 8,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-13b": 16,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 8,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 6,
+      "llama-13b": 16,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 48,
+     "H100": 8,
+     "A100": 40,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "H100": 8,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 16,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "H100": 8,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 16,
+      "llama-8b": 11
+     }
+    },
+    "train": {
+     "L40S": 40,
+     "H100": 8,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 8,
+      "llama-8b": 4
+     },
+     "H100": {
+      "llama-13b": 16,
+      "llama-8b": 9
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 7,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 14,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 11
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 7,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 7
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 5,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 4
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 3
+     }
+    },
+    "train": {
+     "L40S": 32,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 2
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 32,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 8,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 2
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 2,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 4,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 2,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-13b": 8,
+      "llama-8b": 2
+     },
+     "H100": {
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 2,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 2,
+      "llama-13b": 8,
+      "llama-8b": 2
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 2,
+      "llama-13b": 2,
+      "llama-8b": 2
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 2
+     }
+    },
+    "train": {
+     "L40S": 24,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 4,
+      "mixtral-8x7b": 2,
+      "codellama-34b": 2,
+      "llama-13b": 2,
+      "llama-8b": 3
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 2
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 8,
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 16,
+      "llama-8b": 6
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 3,
+      "codellama-34b": 4,
+      "llama-13b": 2,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 16,
+      "llama-8b": 8
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4,
+      "llama-13b": 2
+     },
+     "MI300X": {
+      "llama-13b": 16,
+      "llama-8b": 8
+     },
+     "H100": {
+      "llama-8b": 1
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 16
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 4,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "H100": {
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 4
+     },
+     "MI300X": {
+      "llama-13b": 24
+     },
+     "H100": {
+      "llama-8b": 20
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 8,
+      "llama-13b": 16
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 15
+     }
+    },
+    "train": {
+     "L40S": 16,
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 6,
+      "llama-13b": 16
+     },
+     "H100": {
+      "llama-13b": 4,
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "A100": 16,
+     "L40S": 8,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 6
+     },
+     "H100": {
+      "mixtral-8x7b": 4,
+      "llama-13b": 8,
+      "llama-8b": 14
+     },
+     "MI300X": {
+      "codellama-34b": 10,
+      "llama-13b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "L40S": 8,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 12
+     },
+     "H100": {
+      "llama-13b": 8,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 14,
+      "llama-13b": 10
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 6
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "llama-8b": 1
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 6
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 10,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 12,
+      "llama-13b": 4
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 14
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 8,
+      "llama-13b": 2
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 13
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 8,
+      "mixtral-8x7b": 5,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 6,
+      "llama-13b": 2
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 12
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   },
+   {
+    "inf": {
+     "B200": {
+      "llama-70b": 6,
+      "mixtral-8x7b": 4,
+      "codellama-34b": 2
+     },
+     "MI300X": {
+      "codellama-34b": 6
+     },
+     "H100": {
+      "llama-13b": 12,
+      "llama-8b": 10
+     }
+    },
+    "train": {
+     "A100": 16,
+     "V100": 8
+    },
+    "drifting": [],
+    "preempted": 0
+   }
+  ],
+  "models": [
+   "llama-8b",
+   "llama-13b",
+   "codellama-34b",
+   "llama-70b",
+   "mixtral-8x7b"
+  ]
+ },
+ "placement_policies": [
+  "platform",
+  "platform_ilp"
+ ],
+ "start_policies": [
+  "naive_backfill",
+  "platform",
+  "learned_backfill",
+  "elastic_jobs",
+  "ilp_elastic"
+ ],
+ "twin": {
+  "threshold": 0.1,
+  "sites": 3,
+  "sites_with_driver_change": 3,
+  "alarms_fired": 0,
+  "alarm_days_after_change": [
+   null,
+   null,
+   null
+  ],
+  "twin_error_before": 0.04567,
+  "twin_error_after": null,
+  "calibrated_error_after": null,
+  "false_alarm_days": 30,
+  "first_site": {
+   "drift_gpu": "L40S",
+   "daily_twin_error": {
+    "A100": [
+     null,
+     0.37186,
+     0.40887,
+     0.37024,
+     0.38204,
+     0.37524,
+     null
+    ],
+    "B200": [
+     0.19467,
+     0.18729,
+     0.17847,
+     0.18579,
+     0.17975,
+     0.19231,
+     0.18726
+    ],
+    "H100": [
+     0.04616,
+     0.03691,
+     0.03507,
+     0.03291,
+     0.03705,
+     0.04045,
+     0.03214
+    ],
+    "MI300X": [
+     0.03484,
+     0.0389,
+     0.03493,
+     0.02447,
+     0.13211,
+     0.11063,
+     0.1246
+    ]
+   },
+   "daily_calibrated_error": {
+    "A100": [
+     null,
+     0.21324,
+     0.04668,
+     0.0241,
+     0.01921,
+     0.00745,
+     null
+    ],
+    "B200": [
+     0.0376,
+     0.02915,
+     0.03769,
+     0.0336,
+     0.02899,
+     0.03132,
+     0.03135
+    ],
+    "H100": [
+     0.02928,
+     0.03098,
+     0.02221,
+     0.03243,
+     0.02077,
+     0.03791,
+     0.02968
+    ],
+    "MI300X": [
+     0.03469,
+     0.02784,
+     0.03448,
+     0.02765,
+     0.05478,
+     0.02556,
+     0.04008
+    ]
+   }
+  }
+ },
+ "gates": {
+  "platform": [
+   {
+    "gate": "Requests served within the SLO, share of offered (min)",
+    "value": 0.952,
+    "limit": 0.94,
+    "kind": "min",
+    "pass": true
+   },
+   {
+    "gate": "Attainment, points below the oracle",
+    "value": -0.03933,
+    "limit": 1.5,
+    "kind": "max",
+    "pass": true
+   },
+   {
+    "gate": "Requests that missed the SLO (not shed), share",
+    "value": 0.00276,
+    "limit": 0.01,
+    "kind": "max",
+    "pass": true
+   },
+   {
+    "gate": "SLO misses vs calibrated roofline, ratio",
+    "value": 0.27041,
+    "limit": 0.5,
+    "kind": "max",
+    "pass": true
+   },
+   {
+    "gate": "Replicas that ran out of memory",
+    "value": 0,
+    "limit": 0,
+    "kind": "max",
+    "pass": true
+   },
+   {
+    "gate": "Service-hours below 90% within SLO, share",
+    "value": 0.12143,
+    "limit": 0.12,
+    "kind": "max",
+    "pass": false
+   },
+   {
+    "gate": "Attainment over the GPU-uniform scheduler, points (min)",
+    "value": 36.04733,
+    "limit": 30,
+    "kind": "min",
+    "pass": true
+   },
+   {
+    "gate": "Step-time error on unmeasured pairs, MAPE",
+    "value": 0.16274,
+    "limit": 0.12,
+    "kind": "max",
+    "pass": false
+   },
+   {
+    "gate": "90% interval coverage on unmeasured pairs (min)",
+    "value": 0.85892,
+    "limit": 0.8,
+    "kind": "min",
+    "pass": true
+   },
+   {
+    "gate": "Training jobs that ran out of memory",
+    "value": 0,
+    "limit": 0,
+    "kind": "max",
+    "pass": true
+   },
+   {
+    "gate": "Fleet busy with training on top of inference, points (min)",
+    "value": 35.49267,
+    "limit": 10,
+    "kind": "min",
+    "pass": true
+   }
+  ],
+  "platform_pass": false
+ }
+}

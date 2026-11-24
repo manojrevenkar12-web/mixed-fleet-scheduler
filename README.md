@@ -190,6 +190,37 @@ Held-out gates: 9 of 11 pass.
 | Training jobs that ran out of memory | 0.000 | ≤ 0 | pass |
 | Fleet busy with training on top of inference, points (min) | 31.637 | ≥ 10 | pass |
 
+**Held-out policy sites, run once** (seeds 5201, 5202, 5203, new sites never used to choose or train a policy):
+
+| Policy | Within SLO | Missed SLO | Inference GPU-hours | Within SLO per GPU-hour | Replica starts per day | Fine-tuning tokens kept (bn) | Jobs finished | Preemptions |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| The platform (learned ensemble, margin, fallback, feedback, admission) | 95.2% | 0.28% | 30% | 63,895 | 102 | 38.4 | 84% | 70 |
+| Platform placing replicas by integer optimisation (HiGHS) instead of the greedy pass | 94.6% | 0.24% | 27% | 69,938 | 69 | 38.5 | 82% | 80 |
+| Platform that puts training on any free GPU | 95.2% | 0.28% | 30% | 63,895 | 102 | 39.7 | 85% | 133 |
+| Platform whose fine-tuning start/wait policy was learned by policy search | 95.2% | 0.28% | 30% | 63,895 | 102 | 38.7 | 69% | 105 |
+| Platform that may shard a fine-tuning job over twice the GPUs (or run it on half) | 95.2% | 0.28% | 30% | 63,895 | 102 | 39.7 | 86% | 79 |
+| Integer placement + elastic fine-tuning jobs | 94.6% | 0.24% | 27% | 69,938 | 69 | 39.4 | 89% | 81 |
+
+| Where the fleet's GPU-hours went | The platform | Platform that puts training on any free GPU | Platform whose fine-tuning start/wait policy was learned by policy search | Platform that may shard a fine-tuning job over twice the GPUs (or run it on half) | Integer placement + elastic fine-tuning jobs |
+|---|---:|---:|---:|---:|---:|
+| Serving requests | 22.8% | 22.8% | 22.8% | 22.8% | 21.4% |
+| Inference headroom (allocated, idle) | 6.9% | 6.9% | 6.9% | 6.9% | 5.6% |
+| Fine-tuning work kept | 35.3% | 34.2% | 32.9% | 42.0% | 40.2% |
+| Fine-tuning work lost to preemption | 0.2% | 0.3% | 0.2% | 0.2% | 0.2% |
+| Fine-tuning out of memory | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| Free while jobs waited: a job fitted, the policy waited | 1.9% | 0.5% | 6.8% | 0.7% | 0.4% |
+| Free while jobs waited: fits in memory, too few GPUs free | 4.0% | 2.8% | 5.8% | 2.2% | 1.8% |
+| Free while jobs waited: no waiting job fits in memory | 9.7% | 9.0% | 18.3% | 2.0% | 1.8% |
+| Free, nothing queued | 19.1% | 23.5% | 6.4% | 23.4% | 28.7% |
+
+| Simulator vs what the Scheduler measures live | |
+|---|---:|
+| Twin step-time error before the driver change | 4.6% |
+| Twin step-time error after the change, on that GPU type | – |
+| The Scheduler's calibrated model after the change | – |
+| Drift alarm (daily error above 10%), days after the change | not fired, not fired, not fired |
+| Alarms on days without a change, all sites | 30 |
+
 **Measured on real hardware:** `mfs profile-host` timed decode-like steps with torch.profiler on the build machine (Intel(R) Xeon(R) Processor @ 2.10GHz, 2 threads, PyTorch 2.14.1): 25.29 GB/s when memory-bound, 233.49 GFLOP/s when compute-bound, memory-bound up to batch 64. On a GPU node the same harness would take the profiles the model trains on; here it checks the measuring code against a real chip.
 
 **Decision time, measured** (`mfs bench`, one CPU thread): training the ensemble on 234 profiles takes 6.29 s; one hourly placement for 192 GPUs and 4 services takes 5.9 ms (p95 6.42 ms).
@@ -304,6 +335,14 @@ cd web && npm ci && npm run dev             # the console
   rewarded for tokens kept only, so it does not value finishing a job by a deadline. The gains in the policy table
   come from integer placement and elastic jobs, the change the capacity-loss breakdown pointed to. The integer programme solves one hour at a
   time; it does not plan across hours.
+- **Held-out policy sites (run once, reported as they came out):** integer placement served 0.6 points fewer
+  requests within the SLO than the greedy pass (94.6% vs 95.2%) while serving 9% more per GPU-hour and starting a
+  third fewer replicas; on the development sites it lost nothing. The greedy pass stays the default. Elastic jobs
+  held up (the share of the fleet free because no waiting job fitted fell from 9.7% to 2.0%; jobs finished 86% vs
+  84%). The learned start/wait policy did not generalise: it finished 69% of jobs against 84%.
+- The drift monitor's fixed 10% threshold raised 30 alarm-days on the held-out sites without a driver change, all on
+  GPU types the model had never measured well, and the first held-out driver change hit a GPU type with no running
+  replicas, so there was nothing to compare. It needs a baseline per GPU type rather than one threshold.
 - The job trace has the columns of a `sacct` export but comes from the simulator; no real cluster log was analysed.
   The analysis treats a preempted segment as losing the checkpoint interval, which a real trace would have to state.
 
