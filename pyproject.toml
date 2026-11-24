@@ -1,0 +1,38 @@
+[project]
+name = "mixed-fleet-scheduler"
+version = "1.0.0"
+description = "Scheduler and calibrated simulator for mixed GPU fleets: a PyTorch performance model, guardrails, and every policy benchmarked on the same traces."
+requires-python = ">=3.12"
+authors = [{ name = "Manoj Kumar Prakash", email = "manojrevenkar12@gmail.com" }]
+license = { text = "MIT" }
+dependencies = ["numpy>=1.26", "pyyaml>=6", "torch>=2.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.10", "types-PyYAML"]
+
+[project.scripts]
+mfs = "mfs.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 200
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true

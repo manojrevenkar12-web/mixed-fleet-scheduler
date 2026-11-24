@@ -1,0 +1,19 @@
+{
+ "measured": true,
+ "machine": {
+  "cpu": "x86_64",
+  "threads": 1,
+  "torch": "2.14.1"
+ },
+ "site": {
+  "gpus": 192,
+  "gpu_types": 5,
+  "services": 4,
+  "profiles": 234
+ },
+ "train_s": 6.29,
+ "train_points": 234,
+ "plan_ms_median": 5.9,
+ "plan_ms_p95": 6.42,
+ "plans": 48
+}

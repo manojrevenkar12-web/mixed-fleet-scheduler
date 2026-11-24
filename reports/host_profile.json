@@ -1,0 +1,96 @@
+{
+ "measured": true,
+ "machine": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "threads": 2,
+  "torch": "2.14.1",
+  "python": "3.12.16"
+ },
+ "rows": [
+  {
+   "hidden": 1024,
+   "batch": 1,
+   "wall_ms": 5.7002,
+   "gb_s": 23.5463,
+   "gflop_s": 11.7731,
+   "matmul_share": 0.9816
+  },
+  {
+   "hidden": 1024,
+   "batch": 4,
+   "wall_ms": 8.8185,
+   "gb_s": 15.2201,
+   "gflop_s": 30.4401,
+   "matmul_share": 0.9788
+  },
+  {
+   "hidden": 1024,
+   "batch": 16,
+   "wall_ms": 12.5405,
+   "gb_s": 10.7027,
+   "gflop_s": 85.6217,
+   "matmul_share": 0.9619
+  },
+  {
+   "hidden": 1024,
+   "batch": 64,
+   "wall_ms": 23.0158,
+   "gb_s": 5.8315,
+   "gflop_s": 186.6096,
+   "matmul_share": 0.9487
+  },
+  {
+   "hidden": 1024,
+   "batch": 256,
+   "wall_ms": 73.5796,
+   "gb_s": 1.8241,
+   "gflop_s": 233.4868,
+   "matmul_share": 0.9398
+  },
+  {
+   "hidden": 2048,
+   "batch": 1,
+   "wall_ms": 21.229,
+   "gb_s": 25.2895,
+   "gflop_s": 12.6447,
+   "matmul_share": 0.9668
+  },
+  {
+   "hidden": 2048,
+   "batch": 4,
+   "wall_ms": 39.1951,
+   "gb_s": 13.6974,
+   "gflop_s": 27.3948,
+   "matmul_share": 0.9896
+  },
+  {
+   "hidden": 2048,
+   "batch": 16,
+   "wall_ms": 50.4451,
+   "gb_s": 10.6427,
+   "gflop_s": 85.1415,
+   "matmul_share": 0.9873
+  },
+  {
+   "hidden": 2048,
+   "batch": 64,
+   "wall_ms": 120.7637,
+   "gb_s": 4.4456,
+   "gflop_s": 142.2602,
+   "matmul_share": 0.9683
+  },
+  {
+   "hidden": 2048,
+   "batch": 256,
+   "wall_ms": 366.8076,
+   "gb_s": 1.4636,
+   "gflop_s": 187.3448,
+   "matmul_share": 0.9672
+  }
+ ],
+ "fitted": {
+  "memory_gb_s": 25.29,
+  "compute_gflop_s": 233.49,
+  "memory_bound_until_batch": 64
+ }
+}

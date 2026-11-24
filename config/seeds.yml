@@ -1,0 +1,3 @@
+# dev: every design, every change. heldout: run once behind reports/heldout.lock.
+dev: [21, 22, 23]
+heldout: [3101, 3102, 3103]

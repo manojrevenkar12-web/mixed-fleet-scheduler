@@ -1,0 +1,67 @@
+.purchase {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.question {
+  font-weight: 600;
+}
+
+.site {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.site figcaption {
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+}
+
+.bars {
+  display: grid;
+  gap: 3px;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 14rem 1fr 3.5rem;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: var(--text-s);
+}
+
+.barLabel {
+  color: var(--ink-2);
+  font-stretch: var(--narrow);
+}
+
+.track {
+  height: 10px;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  background: var(--svc-1);
+}
+
+.truth {
+  background: var(--ink);
+}
+
+.barValue {
+  text-align: right;
+}
+
+.mae {
+  color: var(--ink-2);
+  font-size: var(--text-s);
+}
+
+@media (max-width: 640px) {
+  .barRow {
+    grid-template-columns: 8rem 1fr 3rem;
+  }
+}

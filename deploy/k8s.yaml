@@ -1,0 +1,56 @@
+# One placement service per site. State lives on a small volume so a restart gives the same answers.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mfs-state
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mfs
+  labels: { app: mfs }
+spec:
+  replicas: 1                      # single writer: the state file is not shared
+  strategy: { type: Recreate }
+  selector:
+    matchLabels: { app: mfs }
+  template:
+    metadata:
+      labels: { app: mfs }
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: /metrics
+    spec:
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, fsGroup: 10001 }
+      containers:
+        - name: mfs
+          image: ghcr.io/manojrevenkar12-web/mixed-fleet-scheduler:latest
+          ports: [{ containerPort: 8080 }]
+          resources:
+            requests: { cpu: "1", memory: 1Gi }
+            limits: { memory: 2Gi }
+          readinessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+          livenessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+            periodSeconds: 30
+          securityContext: { readOnlyRootFilesystem: true, allowPrivilegeEscalation: false }
+          volumeMounts:
+            - { name: state, mountPath: /var/lib/mfs }
+      volumes:
+        - name: state
+          persistentVolumeClaim: { claimName: mfs-state }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mfs
+spec:
+  selector: { app: mfs }
+  ports: [{ port: 80, targetPort: 8080 }]

@@ -1,0 +1,96 @@
+# The simulated sites: a mixed GPU fleet, the LLM services on it, their traffic, and how fast each model really
+# runs on each GPU. Only src/mfs/world/ reads this file; the evaluation reads the truth the world keeps.
+# `heldout` overrides `dev` key by key and was written before the held-out run.
+
+dev:
+  hours: 168                       # one week, re-placed every hour
+  fleet: { V100: 32, A100: 48, L40S: 64, H100: 32, MI300X: 16 }
+  services:                        # requests per second at the daily peak, prompt and output tokens, SLOs
+    llama-8b: { peak_rps: 754, prompt: 900, output: 220, tpot_ms: 60, ttft_s: 2.0 }
+    llama-13b: { peak_rps: 276, prompt: 1100, output: 250, tpot_ms: 60, ttft_s: 2.0 }
+    codellama-34b: { peak_rps: 160, prompt: 1600, output: 300, tpot_ms: 80, ttft_s: 2.5 }
+    llama-70b: { peak_rps: 138, prompt: 1200, output: 260, tpot_ms: 80, ttft_s: 2.5 }
+  traffic:
+    trough: 0.45                   # night load as a share of the peak
+    hourly_sigma: 0.06
+    burst: { p: 0.03, factor: 1.35 }
+
+  # How close kernels get to the data sheet, per GPU. Hidden: the platform only sees measurements.
+  efficiency:
+    V100: { mem: 0.74, compute: 0.48, overhead_ms: 0.30, batch_penalty: 0.10 }
+    A100: { mem: 0.82, compute: 0.58, overhead_ms: 0.22, batch_penalty: 0.05 }
+    L40S: { mem: 0.80, compute: 0.52, overhead_ms: 0.24, batch_penalty: 0.08 }
+    H100: { mem: 0.84, compute: 0.55, overhead_ms: 0.20, batch_penalty: 0.04 }
+    MI300X: { mem: 0.60, compute: 0.42, overhead_ms: 0.42, batch_penalty: 0.07 }
+    B200: { mem: 0.83, compute: 0.50, overhead_ms: 0.18, batch_penalty: 0.03 }
+  pair_sigma: 0.10                 # a model's kernels on a GPU, around the GPU's typical efficiency
+  site_sigma: 0.05                 # one site's drivers and firmware, per GPU
+  overlap: 0.15                    # share of the shorter of compute and memory time that does not overlap
+  link_latency_us: { nvlink: 6, pcie: 22, xgmi: 9 }
+  memory_reserve_gb: 1.6           # runtime, CUDA context, allocator fragmentation
+  memory_reserve_share: 0.05
+  activation_gb_per_64: 0.6        # activations and workspace per 64 sequences
+  measurement_sigma: 0.03
+
+  profiles:                        # what the site has measured before the scheduler starts
+    held_back_pairs: [[codellama-34b, MI300X], [llama-70b, L40S], [llama-13b, H100]]
+    points_per_pair: 14
+  drift:                           # a driver update slows one GPU type from an hour on
+    - { gpu: L40S, from_hour: 72, mem: 0.80, compute: 0.85 }
+  expansion: { gpu: MI300X, count: 32 }   # the planned purchase the simulator is asked about
+  training:                        # fine-tuning jobs that run on GPUs inference leaves free
+    jobs: 36
+    arrive_within_hours: 132
+    models:
+      llama-8b: { tokens_b: 1.6, gpus: [4, 8] }
+      llama-13b: { tokens_b: 1.0, gpus: [8] }
+      codellama-34b: { tokens_b: 0.5, gpus: [16] }
+    tokens_sigma: 0.35
+    mfu: 0.42                      # share of the GPU's kernel efficiency a training step reaches (hidden)
+    comm_k: 0.12                   # gradient all-reduce cost, larger on slower links (hidden)
+    comm_ref_gbs: 600
+    cross_node: 0.85               # a job on more than 8 GPUs spans nodes
+    bytes_per_param: 16            # BF16 weights and gradients, FP32 Adam state, sharded over the job's GPUs
+    activation_gb: 10
+    checkpoint_loss_hours: 0.25    # work lost when a job is preempted
+
+heldout:
+  fleet: { V100: 24, A100: 40, L40S: 48, H100: 40, MI300X: 24, B200: 16 }
+  services:
+    llama-8b: { peak_rps: 812, prompt: 1000, output: 240, tpot_ms: 60, ttft_s: 2.0 }
+    llama-13b: { peak_rps: 218, prompt: 1100, output: 250, tpot_ms: 60, ttft_s: 2.0 }
+    codellama-34b: { peak_rps: 138, prompt: 1800, output: 320, tpot_ms: 80, ttft_s: 2.5 }
+    llama-70b: { peak_rps: 160, prompt: 1400, output: 280, tpot_ms: 80, ttft_s: 2.5 }
+    mixtral-8x7b: { peak_rps: 232, prompt: 1000, output: 260, tpot_ms: 70, ttft_s: 2.0 }
+  traffic:
+    trough: 0.40
+    hourly_sigma: 0.09
+    burst: { p: 0.05, factor: 1.45 }
+  pair_sigma: 0.14
+  site_sigma: 0.08
+  profiles:
+    held_back_pairs: [[llama-70b, MI300X], [codellama-34b, L40S], [llama-8b, A100]]
+    points_per_pair: 12
+    no_profiles: [B200]            # bought last month, never measured
+    only_on: { mixtral-8x7b: [H100] }   # the new model was only tried on one GPU type
+  drift:
+    - { gpu: L40S, from_hour: 50, mem: 0.78, compute: 0.80 }
+    - { gpu: MI300X, from_hour: 96, mem: 1.15, compute: 1.10 }
+  expansion: { gpu: B200, count: 32 }
+
+# A small site for the fast tests only. Never graded.
+tiny:
+  hours: 24
+  fleet: { A100: 16, L40S: 16, H100: 16 }
+  services:
+    llama-8b: { peak_rps: 60, prompt: 900, output: 220, tpot_ms: 60, ttft_s: 2.0 }
+    llama-70b: { peak_rps: 8, prompt: 1200, output: 260, tpot_ms: 80, ttft_s: 2.5 }
+  profiles:
+    held_back_pairs: [[llama-70b, L40S]]
+    points_per_pair: 10
+  drift:
+    - { gpu: L40S, from_hour: 12, mem: 0.80, compute: 0.85 }
+  expansion: { gpu: H100, count: 16 }
+  training:
+    jobs: 6
+    arrive_within_hours: 12

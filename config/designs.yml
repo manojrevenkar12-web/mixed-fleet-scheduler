@@ -1,0 +1,41 @@
+# The designs compared on the same site, traffic and measurements. `kind` picks the estimator in
+# src/mfs/sim/designs.py; `without` turns single platform safeguards off (ablations).
+designs:
+  uniform:
+    label: Built for identical hardware (every GPU treated as an A100)
+    kind: uniform
+  roofline:
+    label: Data-sheet roofline, one efficiency for every GPU
+    kind: roofline
+  roofline_calibrated:
+    label: Roofline corrected by measured step times, with admission control
+    kind: roofline_calibrated
+  platform:
+    label: The platform (learned ensemble, margin, fallback, feedback, admission)
+    kind: learned
+  with_margin:
+    label: Platform planning on the ensemble mean + 1 std everywhere
+    kind: learned
+    set: { guardrails: { margin_z: 1.0 } }
+  no_fallback:
+    label: Platform that trusts the ensemble where it is unsure
+    kind: learned
+    without: [fallback]
+  no_feedback:
+    label: Platform that ignores measured step times
+    kind: learned
+    without: [feedback]
+  no_admission:
+    label: Platform without admission control
+    kind: learned
+    without: [admission]
+  naive_backfill:
+    label: Platform that puts training on any free GPU
+    kind: learned
+    without: [peak_aware]
+  oracle:
+    label: Knows the true step times (upper bound)
+    kind: oracle
+
+main: [uniform, roofline, roofline_calibrated, platform, oracle]
+ablations: [with_margin, no_fallback, no_feedback, no_admission, naive_backfill]

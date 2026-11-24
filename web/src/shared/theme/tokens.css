@@ -1,0 +1,67 @@
+/* Design tokens. Components use these names, never raw values. */
+:root {
+  --paper: #f3f5f6;
+  --panel: #ffffff;
+  --ink: #15212b;
+  --ink-2: #4f5e6a;
+  --ink-3: #7c8994;
+  --rule: #d5dce2;
+  --rule-strong: #aab6bf;
+  --focus: #1f5fbf;
+
+  /* services, in a fixed order */
+  --svc-1: #2f6db5;
+  --svc-2: #11867a;
+  --svc-3: #7a4fb3;
+  --svc-4: #b06f12;
+  --svc-5: #c2416b;
+  --train: #3f4d58;
+  --idle: #e4e9ed;
+
+  --good: #1d7a46;
+  --bad: #b42318;
+  --drift: #b45309;
+
+  --font: "Archivo Variable", system-ui, sans-serif;
+  --narrow: 72%;
+  --text-xs: 0.75rem;
+  --text-s: 0.875rem;
+  --text-m: 1rem;
+  --text-l: 1.375rem;
+  --text-xl: 2.25rem;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 64px;
+  --radius-s: 2px;
+  --radius-m: 6px;
+  --measure: 68ch;
+  --cell: 11px;
+  --cell-gap: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #10171d;
+    --panel: #172129;
+    --ink: #e6ecf0;
+    --ink-2: #a9b6c0;
+    --ink-3: #7f8d98;
+    --rule: #2a3741;
+    --rule-strong: #445460;
+    --focus: #7fb0ff;
+    --svc-1: #5b93d9;
+    --svc-2: #33ad9f;
+    --svc-3: #a27fd6;
+    --svc-4: #d49a3c;
+    --svc-5: #e06b90;
+    --train: #9aa9b5;
+    --idle: #24303a;
+    --good: #4cc07f;
+    --bad: #ff7a6b;
+    --drift: #f59e4b;
+  }
+}

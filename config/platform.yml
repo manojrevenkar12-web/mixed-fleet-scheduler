@@ -1,0 +1,51 @@
+# The scheduler's settings. Only src/mfs/platform/ and src/mfs/service.py read this file.
+
+roofline:                          # the simple heuristic: data sheet x one efficiency for every GPU
+  mem_efficiency: 0.75
+  compute_efficiency: 0.55
+  overhead_ms: 0.25
+  prefill_efficiency: 0.65
+
+memory:                            # what the scheduler assumes is free on a GPU
+  reserve_share: 0.08
+  reserve_gb: 2.0
+  activation_gb_per_64: 0.8
+
+perf_model:                        # PyTorch ensemble predicting log decode-step time
+  members: 5
+  hidden: 64
+  epochs: 500
+  lr: 0.003
+  weight_decay: 0.0001
+  bootstrap: true
+  calibration_share: 0.2          # held out to scale the members' spread to 90% coverage
+  threads: 1
+
+guardrails:
+  margin_z: 0.0                    # plan batches on mean + z * std; 0 = the mean (dev: a margin cost more than it saved)
+  drift_margin_z: 1.0              # ... except on a GPU type that is drifting
+  fallback_std: 0.20               # spread (log, calibrated) above which the prediction counts as out of distribution
+  fallback_margin: 0.05           # ... and plans 5% above its answer
+  tpot_slack: 0.92                 # plan decode steps at this share of the SLO
+  admission_share: 0.90            # admit at most this share of a replica's planned capacity; shed the rest
+  headroom: 0.12                   # plan capacity for forecast demand x (1 + headroom)
+
+feedback:                          # measured step times flow back into predictions
+  alpha: 0.5                       # EWMA weight of the newest measured/predicted ratio
+  drift_log_ratio: 0.12            # a GPU type whose replicas all move by more than this is drifting
+  drift_margin_hours: 6            # ... and is planned with drift_margin_z for this long
+  prefill_ratio_min_profiles: 2
+
+training:                          # what the scheduler assumes about fine-tuning jobs (public rules of thumb)
+  assumed_mfu: 0.40
+  bytes_per_param: 16
+  activation_gb: 11
+  lookahead_hours: 3               # a job starts only on GPUs inference did not use yesterday over the next 3 hours
+  short_job_hours: 3               # ... unless it is expected to finish within this many hours
+
+placement:
+  max_replicas_per_service: 64     # last hour's replicas are kept first while they are still needed
+
+expansion:
+  calibration_profiles: 3          # measurements on a new GPU type before the twin is trusted
+  target_attainment: 0.99

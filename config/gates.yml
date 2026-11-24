@@ -1,0 +1,14 @@
+# Release gates for the platform, set from the development sites before the held-out run and never loosened
+# after it (AGENTS.md).
+platform:
+  attainment_min: 0.94
+  below_oracle_pts_max: 1.5
+  violated_share_max: 0.01
+  violated_vs_calibrated_roofline_max: 0.5
+  crashes_max: 0
+  bad_service_hours_share_max: 0.12
+  over_uniform_pts_min: 30
+  unmeasured_mape_max: 0.12
+  coverage_min: 0.8
+  training_crashes_max: 0
+  fleet_busy_over_inference_pts_min: 10   # training must fill at least 10 points of the fleet that inference leaves idle
