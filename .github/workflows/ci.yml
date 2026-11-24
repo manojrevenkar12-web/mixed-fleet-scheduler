@@ -38,11 +38,13 @@ jobs:
         run: python -m mfs.cli gate dev
       - name: the held-out run happened once
         run: |
-          if [ -f reports/heldout.lock ]; then
-            n=$(git log --format=%H --no-renames -- reports/heldout.lock | wc -l)
-            echo "heldout.lock commits: $n"; test "$n" -eq 1
-            python -m mfs.cli run heldout && exit 1 || test $? -eq 3
-          fi
+          for split in heldout heldout_policies; do
+            if [ -f reports/$split.lock ]; then
+              n=$(git log --format=%H --no-renames -- reports/$split.lock | wc -l)
+              echo "$split.lock commits: $n"; test "$n" -eq 1
+              python -m mfs.cli run $split && exit 1 || test $? -eq 3
+            fi
+          done
       - name: the development study reruns and still passes
         if: matrix.python == '3.13'
         run: |

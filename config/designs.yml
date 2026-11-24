@@ -33,9 +33,28 @@ designs:
     label: Platform that puts training on any free GPU
     kind: learned
     without: [peak_aware]
+  platform_ilp:
+    label: Platform placing replicas by integer optimisation (HiGHS) instead of the greedy pass
+    kind: learned
+    set: { placement: { policy: ilp } }
+  learned_backfill:
+    label: Platform whose fine-tuning start/wait policy was learned by policy search
+    kind: learned
+    backfill: learned
+  elastic_jobs:
+    label: Platform that may shard a fine-tuning job over twice the GPUs (or run it on half)
+    kind: learned
+    set: { training: { elastic_sizes: [1, 2, 0.5] } }
+  ilp_elastic:
+    label: Integer placement + elastic fine-tuning jobs
+    kind: learned
+    set: { placement: { policy: ilp }, training: { elastic_sizes: [1, 2, 0.5] } }
   oracle:
     label: Knows the true step times (upper bound)
     kind: oracle
 
 main: [uniform, roofline, roofline_calibrated, platform, oracle]
 ablations: [with_margin, no_fallback, no_feedback, no_admission, naive_backfill]
+# scheduling policies compared head to head on the same traces (ADR 0007, 0008)
+placement_policies: [platform, platform_ilp]
+start_policies: [naive_backfill, platform, learned_backfill, elastic_jobs, ilp_elastic]

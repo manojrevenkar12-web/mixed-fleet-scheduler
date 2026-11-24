@@ -13,13 +13,20 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="mfs")
     sub = p.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run", help="run every design on a split")
-    r.add_argument("split", choices=["dev", "heldout"])
+    r.add_argument("split", choices=["dev", "heldout", "heldout_policies"])
     r.add_argument("--workers", type=int, default=3)
     g = sub.add_parser("gate", help="exit 1 if the platform fails a gate on a split")
-    g.add_argument("split", choices=["dev", "heldout"])
+    g.add_argument("split", choices=["dev", "heldout", "heldout_policies"])
     sub.add_parser("report", help="regenerate REPORT.md, the README block and the console data")
     sub.add_parser("profile-host", help="measure decode-like kernels on this machine with torch.profiler")
     sub.add_parser("bench", help="measure how long one hourly placement takes")
+    sub.add_parser("train-policy", help="learn the fine-tuning start/wait policy on the training seeds")
+    e = sub.add_parser("export-trace", help="write a simulated site-week as a Slurm-style job trace")
+    e.add_argument("--seed", type=int, default=21)
+    e.add_argument("--out", default="traces/site-21.csv")
+    a = sub.add_parser("analyse-trace", help="where did the GPU-hours in a job trace go?")
+    a.add_argument("path")
+    a.add_argument("--checkpoint-hours", type=float, default=0.25)
     s = sub.add_parser("serve", help="run the placement service")
     s.add_argument("--port", type=int, default=8080)
     s.add_argument("--state", default="scheduler-state.json")
@@ -28,9 +35,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "run":
         from .lab import study
 
-        if args.split == "heldout":
+        if args.split != "dev":
             try:
-                res = study.run_heldout_once(args.workers)
+                res = study.run_heldout_once(args.workers, args.split)
             except study.HeldOutLocked as e:
                 print(e, file=sys.stderr)
                 return 3
@@ -59,6 +66,27 @@ def main(argv: list[str] | None = None) -> int:
         from .lab.bench import main as bench_main
 
         return bench_main()
+    if args.cmd == "train-policy":
+        from .lab.train_policy import train
+
+        out = train()
+        print(f"policy kept {out['train_score_bn']:.2f} bn tokens on the training sites; baselines {out['baselines_bn']}")
+        return 0
+    if args.cmd == "export-trace":
+        from pathlib import Path
+
+        from .lab.trace import export
+
+        print(f"{export(args.seed, Path(args.out))} rows written to {args.out}")
+        return 0
+    if args.cmd == "analyse-trace":
+        from pathlib import Path
+
+        from .lab.trace import analyse
+
+        for k, v in analyse(Path(args.path), args.checkpoint_hours).items():
+            print(f"{k:32s} {v:.3f}" if isinstance(v, float) else f"{k:32s} {v}")
+        return 0
     if args.cmd == "serve":
         from .service import serve
 

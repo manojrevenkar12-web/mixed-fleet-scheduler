@@ -4,6 +4,7 @@ import { Fleet } from "../features/fleet/Fleet";
 import { Gates } from "../features/gates/Gates";
 import { Guardrails } from "../features/guardrails/Guardrails";
 import { Accuracy, Purchase } from "../features/model/Model";
+import { CapacityLoss, Policies, TwinDrift } from "../features/policies/Policies";
 import { Results } from "../features/results/Results";
 import { hasOccupancy, type Report, type Split, useReport } from "../shared/data/report";
 import { num } from "../shared/format";
@@ -97,6 +98,15 @@ function SplitView({ split }: { split: Split }) {
       </Section>
       <Section id="purchase" title="What a purchase buys" lead="The same model, used as a twin of the site to answer a capacity question before the cards arrive.">
         <Purchase split={split} />
+      </Section>
+      <Section id="policies" title="Scheduling policies, head to head" lead="Greedy placement against an integer programme, and three ways to decide when a fine-tuning job starts, on the same traffic, jobs and hardware.">
+        <Policies split={split} />
+      </Section>
+      <Section id="capacity" title="Where the GPU-hours went" lead="Every GPU-hour of the week, by what it did. Pick a part to compare it across policies. The free hours while jobs waited are split by cause, which is what pointed to elastic jobs.">
+        <CapacityLoss split={split} />
+      </Section>
+      <Section id="drift" title="Is the Simulator still right?" lead="Every hour the Simulator's model predicts the step times the Scheduler then measures. A driver change shows up the same day.">
+        <TwinDrift split={split} />
       </Section>
       <Section id="guardrails" title="What each guardrail is worth">
         <Guardrails split={split} />

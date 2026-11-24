@@ -36,3 +36,15 @@ simulated site through the HTTP API.
 
 ## Run the held-out sites
 Only once, after the gates are set: `python -m mfs.cli run heldout && python -m mfs.cli report`.
+
+## Retrain the start/wait policy
+`python -m mfs.cli train-policy` (about an hour on 2 cores; settings in `platform.yml: training.policy_search`). It
+writes `models/backfill_policy.json`; commit it, rerun `run dev` and `report`. Never train on dev or held-out seeds.
+
+## Analyse a cluster's job trace
+Export from Slurm with `sacct --parsable2 --format=JobID,Partition,AllocTRES,Submit,Start,End,State`, map it to the
+columns of `traces/site-21.csv` (Kind = serve or train, AllocGPUs from AllocTRES), add the `# fleet:` header line,
+then `python -m mfs.cli analyse-trace <file>`.
+
+## Run the held-out policy sites
+Only once, after the policies are fixed: `python -m mfs.cli run heldout_policies && python -m mfs.cli report`.

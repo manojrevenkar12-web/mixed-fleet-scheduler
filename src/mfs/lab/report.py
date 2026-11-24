@@ -108,6 +108,59 @@ def _ablations(r: dict[str, Any]) -> list[str]:
     return out
 
 
+CAP = [
+    ("Serving requests", "serving"),
+    ("Inference headroom (allocated, idle)", "inference_headroom"),
+    ("Fine-tuning work kept", "training_kept"),
+    ("Fine-tuning work lost to preemption", "training_lost_to_preemption"),
+    ("Fine-tuning out of memory", "training_out_of_memory"),
+    ("Free while jobs waited: a job fitted, the policy waited", "stranded_job_fit_but_waited"),
+    ("Free while jobs waited: fits in memory, too few GPUs free", "stranded_too_few_gpus_free"),
+    ("Free while jobs waited: no waiting job fits in memory", "stranded_no_job_fits_memory"),
+    ("Free, nothing queued", "idle_nothing_queued"),
+]
+
+
+def _policy_table(r: dict[str, Any], names: list[str]) -> list[str]:
+    d = r["designs"]
+    out = [
+        "| Policy | Within SLO | Missed SLO | Inference GPU-hours | Within SLO per GPU-hour | Replica starts per day | Fine-tuning tokens kept (bn) | Jobs finished | Preemptions |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for n in names:
+        m = d[n]
+        out.append(
+            f"| {r['labels'][n]} | {pct(m['attainment'])} | {pct(m['violated_share'], 2)} | {pct(m['gpu_utilisation'], 0)} | {num(m['met_per_gpu_hour'])} | {num(m['replica_starts_per_day'])} | {num(m.get('training_net_tokens_b'), 1)} | {pct(m['training_done_share'], 0)} | {num(m['training_preemptions'])} |"
+        )
+    return out
+
+
+def _capacity(r: dict[str, Any], names: list[str]) -> list[str]:
+    d = r["designs"]
+    if any(f"cap_{k}" not in d[n] for n in names for _, k in CAP):
+        return []
+    out = ["| Where the fleet's GPU-hours went | " + " | ".join(r["labels"][n] if n != "platform" else "The platform" for n in names) + " |", "|---|" + "---:|" * len(names)]
+    for label, k in CAP:
+        out.append(f"| {label} | " + " | ".join(pct(d[n][f"cap_{k}"]) for n in names) + " |")
+    return out
+
+
+def _twin(r: dict[str, Any]) -> list[str]:
+    t = r.get("twin")
+    if not t:
+        return []
+    days = ", ".join("not fired" if x is None else "same day" if x == 0 else f"after {x} d" for x in t["alarm_days_after_change"])
+    return [
+        "| Simulator vs what the Scheduler measures live | |",
+        "|---|---:|",
+        f"| Twin step-time error before the driver change | {pct(t['twin_error_before'])} |",
+        f"| Twin step-time error after the change, on that GPU type | {pct(t['twin_error_after'])} |",
+        f"| The Scheduler's calibrated model after the change | {pct(t['calibrated_error_after'])} |",
+        f"| Drift alarm (daily error above {pct(t['threshold'], 0)}), days after the change | {days} |",
+        f"| Alarms on days without a change, all sites | {t['false_alarm_days']} |",
+    ]
+
+
 def readme_block(dev: dict[str, Any], held: dict[str, Any] | None, host: dict[str, Any] | None, bench: dict[str, Any] | None = None) -> str:
     s = dev["site"]
     lines = [
@@ -127,6 +180,23 @@ def readme_block(dev: dict[str, Any], held: dict[str, Any] | None, host: dict[st
     lines += _expansion(dev)
     lines += ["", "**What each guardrail is worth** (one changed at a time):", ""]
     lines += _ablations(dev)
+    if dev.get("placement_policies"):
+        lines += [
+            "",
+            "**Scheduling policies, head to head on the same traces** (placement: greedy pass vs integer optimisation; fine-tuning start/wait: any free GPU vs the look-ahead rule vs the policy learned on separate training sites):",
+            "",
+        ]
+        lines += _policy_table(dev, dev["placement_policies"] + [n for n in dev["start_policies"] if n not in dev["placement_policies"]])
+    cap = _capacity(dev, ["platform", "naive_backfill", "learned_backfill", "elastic_jobs", "ilp_elastic"]) if "learned_backfill" in dev["designs"] else []
+    if cap:
+        lines += ["", "**Capacity-loss breakdown** (shares of all GPU-hours in the week; the same analysis runs on any Slurm-style job trace with `mfs analyse-trace`):", ""] + cap
+    tw = _twin(dev)
+    if tw:
+        lines += [
+            "",
+            "**Simulator drift monitor:** each hour the Simulator's model predicts the step times the Scheduler then measures; a daily error above the threshold on one GPU type raises an alarm.",
+            "",
+        ] + tw
     lines += ["", f"**Release gates, development sites:** {'all pass' if dev['gates']['platform_pass'] else 'some fail'}", ""]
     lines += _gates(dev)
     if held:
@@ -138,6 +208,14 @@ def readme_block(dev: dict[str, Any], held: dict[str, Any] | None, host: dict[st
         lines += _expansion(held)
         lines += ["", f"Held-out gates: {sum(x['pass'] for x in held['gates']['platform'])} of {len(held['gates']['platform'])} pass.", ""]
         lines += _gates(held)
+    hp = _load("heldout_policies")
+    if hp:
+        lines += ["", f"**Held-out policy sites, run once** (seeds {', '.join(str(x) for x in hp['seeds'])}, new sites never used to choose or train a policy):", ""]
+        lines += _policy_table(hp, hp["placement_policies"] + [n for n in hp["start_policies"] if n not in hp["placement_policies"]])
+        lines += [""] + _capacity(hp, ["platform", "naive_backfill", "learned_backfill", "elastic_jobs", "ilp_elastic"])
+        tw = _twin(hp)
+        if tw:
+            lines += [""] + tw
     if host:
         f, mch = host["fitted"], host["machine"]
         lines += [
@@ -181,6 +259,7 @@ def write_all() -> list[Path]:
     if dev is None:
         raise SystemExit("run `python -m mfs.cli run dev` first")
     held, host, bench = _load("heldout"), _load("host_profile"), _load("bench")
+    hp = _load("heldout_policies")
     paths = []
     p = ROOT / "REPORT.md"
     p.write_text(report_md(dev, held), encoding="utf-8")
@@ -195,6 +274,6 @@ def write_all() -> list[Path]:
             paths.append(readme)
     data = ROOT / "web" / "public" / "data" / "report.json"
     data.parent.mkdir(parents=True, exist_ok=True)
-    data.write_text(json.dumps({"dev": dev, "heldout": held, "host": host, "bench": bench}, separators=(",", ":")) + "\n", encoding="utf-8")
+    data.write_text(json.dumps({"dev": dev, "heldout": held, "heldout_policies": hp, "host": host, "bench": bench}, separators=(",", ":")) + "\n", encoding="utf-8")
     paths.append(data)
     return paths

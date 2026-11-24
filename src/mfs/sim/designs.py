@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import math
 from dataclasses import dataclass, field
 from typing import Any
@@ -55,6 +56,11 @@ class HourResult:
     train_done: int = 0
     train_crashed: int = 0
     preempted: int = 0
+    inf_busy_gpu_h: float = 0.0  # GPUs x share of planned capacity actually admitted
+    lost_gpu_h: float = 0.0  # fine-tuning work thrown away by preemption, in GPU-hours
+    oom_gpu_h: float = 0.0
+    waiting_gpus: int = 0  # GPUs asked for by fine-tuning jobs that are queued, not running
+    stranded: tuple[float, float, float] = (0.0, 0.0, 0.0)  # free GPUs while jobs waited: (a job fit, too few, none fits in memory)
 
 
 @dataclass
@@ -66,6 +72,8 @@ class Run:
     placements: list[Placement] = field(default_factory=list)
     train: dict[str, Any] = field(default_factory=dict)
     jobs: dict[int, Any] = field(default_factory=dict)  # job id -> {arrival, done_at}
+    twin: list[tuple[int, str, float, float]] = field(default_factory=list)  # (hour, gpu, |log err| of the twin, of the calibrated model)
+    train_net_tokens: float = 0.0  # tokens of progress kept at the end of the week (work lost to preemption excluded)
 
 
 def evaluate_replica(site: Site, r: Replica, hour: int) -> tuple[float, bool, bool, bool, int]:
@@ -118,20 +126,30 @@ def make_scheduler(site: Site, d: dict[str, Any], cfg: dict[str, Any], *, profil
         cal.gpu = step_ratios(profiles, cfg, services)
         cal.train = train_ratios(site.training_profiles(), cfg)
         est = Roofline(cfg, services, cal)
-        return Scheduler(est, cfg, services, dict(site.fleet), admission=True, feedback=True, calibration=cal), train
+        return Scheduler(est, cfg, services, dict(site.fleet), admission=True, feedback=True, calibration=cal, peak_aware="peak_aware" not in off), train
     if kind == "oracle":
         est = Oracle(site)
         return Scheduler(est, cfg, services, dict(site.fleet), admission=True, feedback=False), train
     return build_platform(services, site.fleet, profiles, cfg, seed=site.seed, without=off, training_profiles=site.training_profiles())
 
 
-def run_design(site: Site, name: str, d: dict[str, Any], cfg: dict[str, Any], *, keep_placements: bool = False) -> Run:
+def load_backfill_weights() -> list[float]:
+    from .. import config as _config
+
+    return [float(x) for x in json.loads((_config.ROOT / "models" / "backfill_policy.json").read_text(encoding="utf-8"))["weights"]]
+
+
+def run_design(site: Site, name: str, d: dict[str, Any], cfg: dict[str, Any], *, keep_placements: bool = False, backfill_weights: list[float] | None = None) -> Run:
     sched, train = make_scheduler(site, d, cfg)
+    if backfill_weights is not None:
+        sched.backfill_weights = backfill_weights
+    elif d.get("backfill") == "learned":
+        sched.backfill_weights = load_backfill_weights()
     run = Run(name, train=train)
     models = site.models
     jobs = {j.id: j for j in site.training_jobs()}
     left = {j: job.tokens for j, job in jobs.items()}  # the truth: tokens each job still has to process
-    last_gpu: dict[int, str] = {}
+    last_gpu: dict[int, tuple[str, int]] = {}
     loss_h = float(site.cfg["training"]["checkpoint_loss_hours"]) if jobs else 0.0
     for h in range(site.hours):
         if isinstance(sched.est, Oracle):
@@ -156,17 +174,31 @@ def run_design(site: Site, name: str, d: dict[str, Any], cfg: dict[str, Any], *,
             sources[r.source] = sources.get(r.source, 0) + 1
             shape = type(r.shape)(r.shape.model, r.shape.gpu, r.shape.tp, b)
             obs.append(site.observe(shape, h, cr) if not cr else Observation(shape, 0.0, True))
+        pm = getattr(sched.est, "pm", None)
+        if pm is not None:  # the Simulator's model against what production measured, before this hour's feedback
+            for o in obs:
+                if o.crashed or o.step_ms <= 0:
+                    continue
+                s_ = o.shape
+                twin_log, _ = pm.predict_log(s_.model, s_.gpu, s_.tp, s_.batch)
+                cal_mean, _, _ = sched.est.step(s_.model, s_.gpu, s_.tp, s_.batch)
+                lo = math.log(o.step_ms / 1000.0)
+                run.twin.append((h, s_.gpu, abs(lo - twin_log), abs(lo - math.log(cal_mean))))
         sched.observe(h, obs)
         # training: preempted jobs fall back to their last checkpoint; the rest run for the hour
+        lost = 0.0
         for jid in p.preempted:
             job = jobs[jid]
-            left[jid] = min(job.tokens, left[jid] + loss_h * 3600.0 * site.train_rate(job.model, last_gpu[jid], job.gpus, h))
+            before = left[jid]
+            lg, ln = last_gpu[jid]
+            left[jid] = min(job.tokens, left[jid] + loss_h * 3600.0 * site.train_rate(job.model, lg, ln, h))
+            lost += ln * loss_h * (left[jid] - before) / max(loss_h * 3600.0 * site.train_rate(job.model, lg, ln, h), 1e-9)
         reports: list[TrainingReport] = []
         tg = tt = 0.0
         done = tcrash = 0
         for a in p.training:
             job = jobs[a.job]
-            last_gpu[a.job] = a.gpu
+            last_gpu[a.job] = (a.gpu, a.gpus)
             if not site.train_fits(job.model, a.gpu, a.gpus):
                 reports.append(TrainingReport(a.job, a.gpu, a.gpus, 0.0, crashed=True))
                 tcrash += 1
@@ -183,9 +215,48 @@ def run_design(site: Site, name: str, d: dict[str, Any], cfg: dict[str, Any], *,
                 run.jobs[a.job]["done_at"] = h + secs / 3600.0
             reports.append(TrainingReport(a.job, a.gpu, a.gpus, site.observe_training(a.job, job.model, a.gpu, a.gpus, h), done=finished))
         sched.observe_training(h, reports)
-        run.hours.append(HourResult(h, demand, met, dict(p.shed_rps), crashed, tpot, over, p.gpus_used(), sources, tg, tt, done, tcrash, len(p.preempted)))
+        busy = sum(r.shape.tp * min(1.0, r.admitted_rps / r.capacity_rps) for r in p.replicas if r.capacity_rps > 0)
+        running = {a.job for a in p.training}
+        queued = [j for jid, j in sched.jobs.items() if jid not in running and j.arrival <= h]
+        waiting = sum(j.gpus for j in queued)
+        on_train: dict[str, int] = {}
+        for a in p.training:
+            on_train[a.gpu] = on_train.get(a.gpu, 0) + a.gpus
+        st = [0.0, 0.0, 0.0]
+        if queued:
+            used = p.gpus_used()
+            for g, n in site.fleet.items():
+                f = n - used.get(g, 0) - on_train.get(g, 0)
+                if f <= 0:
+                    continue
+                fit = [j for j in queued if site.train_fits(j.model, g, j.gpus)]
+                st[0 if any(j.gpus <= f for j in fit) else 1 if fit else 2] += f
+        run.hours.append(
+            HourResult(
+                h,
+                demand,
+                met,
+                dict(p.shed_rps),
+                crashed,
+                tpot,
+                over,
+                p.gpus_used(),
+                sources,
+                tg,
+                tt,
+                done,
+                tcrash,
+                len(p.preempted),
+                busy,
+                lost,
+                float(sum(a.gpus for a in p.training if not site.train_fits(jobs[a.job].model, a.gpu, a.gpus))),
+                waiting,
+                (st[0], st[1], st[2]),
+            )
+        )
         if keep_placements:
             run.placements.append(p)
     run.starts = sched.starts
     run.log = sched.log
+    run.train_net_tokens = sum(job.tokens - left[j] for j, job in jobs.items() if job.arrival < site.hours)
     return run

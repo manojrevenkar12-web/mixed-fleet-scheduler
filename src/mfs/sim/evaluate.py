@@ -66,7 +66,76 @@ def run_metrics(site: Site, run: Run) -> dict[str, Any]:
         "drift_recovery_hours": recover,
         "train_points": run.train.get("points", 0),
         **_training_metrics(site, run, gpu_hours),
+        **{f"cap_{k}": v for k, v in capacity_breakdown(site, run).items()},
     }
+
+
+def capacity_breakdown(site: Site, run: Run) -> dict[str, float]:
+    """Where the fleet's GPU-hours went, as shares that add up to 1."""
+    fleet = sum(site.fleet.values())
+    total = fleet * len(run.hours)
+    serving = headroom = train = lost = oom = idle = 0.0
+    st = [0.0, 0.0, 0.0]
+    for h in run.hours:
+        alloc = sum(h.gpus.values())
+        serving += h.inf_busy_gpu_h
+        headroom += alloc - h.inf_busy_gpu_h
+        lost += h.lost_gpu_h
+        oom += h.oom_gpu_h
+        train += max(0.0, h.train_gpu_hours - h.oom_gpu_h)
+        free = max(0.0, fleet - alloc - h.train_gpu_hours)
+        s = min(free, sum(h.stranded))
+        scale = s / sum(h.stranded) if sum(h.stranded) > 0 else 0.0
+        for i in range(3):
+            st[i] += h.stranded[i] * scale
+        idle += free - s
+    useful_train = max(0.0, train - lost)
+    return {
+        "serving": serving / total,
+        "inference_headroom": headroom / total,
+        "training_kept": useful_train / total,
+        "training_lost_to_preemption": lost / total,
+        "training_out_of_memory": oom / total,
+        "stranded_job_fit_but_waited": st[0] / total,
+        "stranded_too_few_gpus_free": st[1] / total,
+        "stranded_no_job_fits_memory": st[2] / total,
+        "idle_nothing_queued": idle / total,
+    }
+
+
+def twin_drift(site: Site, run: Run) -> dict[str, Any] | None:
+    """How far the Simulator's model drifts from what the Scheduler measures in production, per day, and when an
+    alarm (daily error above the threshold on one GPU type) would have fired."""
+    if not run.twin:
+        return None
+    days = len(run.hours) // 24
+    gpus = sorted({g for _, g, _, _ in run.twin})
+    daily: dict[str, list[float | None]] = {}
+    daily_cal: dict[str, list[float | None]] = {}
+    for g in gpus:
+        daily[g], daily_cal[g] = [], []
+        for d in range(days):
+            rows = [(e, c) for h, gg, e, c in run.twin if gg == g and d * 24 <= h < (d + 1) * 24]
+            daily[g].append(float(np.mean([math.expm1(e) for e, _ in rows])) if rows else None)
+            daily_cal[g].append(float(np.mean([math.expm1(c) for _, c in rows])) if rows else None)
+    thr = 0.10
+    drift = (site.cfg.get("drift") or [{}])[0]
+    out: dict[str, Any] = {"threshold": thr, "daily_twin_error": daily, "daily_calibrated_error": daily_cal}
+    if drift:
+        g, start_day = drift["gpu"], int(drift["from_hour"]) // 24
+        series = daily.get(g, [])
+        fired = next((d for d in range(start_day, days) if (series[d] or 0) > thr), None)
+        out["drift_gpu"] = g
+        out["alarm_days_after_change"] = None if fired is None else fired - start_day
+        cut = int(drift["from_hour"])
+        before = [math.expm1(e) for h, gg, e, _ in run.twin if gg == g and h < cut]
+        after = [math.expm1(e) for h, gg, e, _ in run.twin if gg == g and h >= cut]
+        cal_after = [math.expm1(c) for h, gg, _, c in run.twin if gg == g and h >= cut]
+        out["twin_error_before"] = float(np.mean(before)) if before else None
+        out["twin_error_after"] = float(np.mean(after)) if after else None
+        out["calibrated_error_after"] = float(np.mean(cal_after)) if cal_after else None
+    out["false_alarm_days"] = sum(1 for gg in gpus for d, x in enumerate(daily[gg]) if x is not None and x > thr and not (drift and gg == drift["gpu"] and d >= int(drift["from_hour"]) // 24))
+    return out
 
 
 def _training_metrics(site: Site, run: Run, inference_gpu_hours: float) -> dict[str, Any]:
@@ -78,6 +147,7 @@ def _training_metrics(site: Site, run: Run, inference_gpu_hours: float) -> dict[
         "training_done_share": len(done) / len(run.jobs) if run.jobs else None,
         "training_job_hours": sum(j["done_at"] - j["arrival"] for j in done) / len(done) if done else None,
         "training_tokens_b": sum(h.train_tokens for h in run.hours) / 1e9,
+        "training_net_tokens_b": run.train_net_tokens / 1e9,
         "training_gpu_share": tg / fleet_hours,
         "training_preemptions": sum(h.preempted for h in run.hours),
         "training_crashes": sum(h.train_crashed for h in run.hours),

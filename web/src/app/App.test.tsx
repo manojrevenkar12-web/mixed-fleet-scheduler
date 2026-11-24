@@ -70,3 +70,25 @@ describe("console", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("not in the expected shape");
   });
 });
+
+describe("policies", () => {
+  it("compares the scheduling policies and breaks down the GPU-hours", async () => {
+    serve(fixture);
+    render(<App />);
+    const pol = await screen.findByRole("region", { name: "Scheduling policies, head to head" });
+    expect(within(pol).getByRole("rowheader", { name: "Integer placement + elastic jobs" })).toBeInTheDocument();
+    const cap = screen.getByRole("region", { name: "Where the GPU-hours went" });
+    expect(within(cap).getByRole("img", { name: /Integer placement \+ elastic jobs: Serving/ })).toBeInTheDocument();
+    await userEvent.click(within(cap).getByRole("button", { name: "Free: no job fits in memory" }));
+    expect(within(cap).getByRole("button", { name: "Free: no job fits in memory" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByText("same day, 3 of 3 sites")).toBeInTheDocument();
+  });
+
+  it("says so when a report has no policy comparison", async () => {
+    const old = { ...fixture, dev: { ...fixture.dev, placement_policies: undefined, start_policies: undefined, twin: undefined } };
+    serve(old);
+    render(<App />);
+    expect(await screen.findByText("This report has no policy comparison")).toBeInTheDocument();
+    expect(screen.getByText("No drift monitor in this report")).toBeInTheDocument();
+  });
+});

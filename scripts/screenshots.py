@@ -33,11 +33,14 @@ def main() -> None:
                 ("console", {"width": 1280, "height": 1000}, "light", False),
                 ("console-dark", {"width": 1280, "height": 1000}, "dark", False),
                 ("console-phone", {"width": 390, "height": 844}, "light", False),
+                ("policies", {"width": 1280, "height": 1240}, "light", False),
             ]
             for name, size, scheme, full in shots:
                 page = browser.new_page(viewport=size, device_scale_factor=1.5 if not full else 1, color_scheme=scheme, reduced_motion="reduce")
                 page.goto(f"http://127.0.0.1:{port}/index.html")
                 page.wait_for_selector("#fleet")
+                if name == "policies":
+                    page.evaluate("document.getElementById('policies').scrollIntoView()")
                 page.wait_for_timeout(800)
                 page.screenshot(path=str(OUT / f"{name}.png"), full_page=full)
             browser.close()

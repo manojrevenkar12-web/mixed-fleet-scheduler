@@ -1,3 +1,5 @@
 # dev: every design, every change. heldout: run once behind reports/heldout.lock.
 dev: [21, 22, 23]
 heldout: [3101, 3102, 3103]
+policy_train: [601, 602]   # only for learning the start/wait policy; never graded
+heldout_policies: [5201, 5202, 5203]   # second held-out run, for the placement and start/wait policies (ADR 0009)

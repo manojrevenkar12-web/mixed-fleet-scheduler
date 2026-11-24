@@ -41,9 +41,20 @@ training:                          # what the scheduler assumes about fine-tunin
   bytes_per_param: 16
   activation_gb: 11
   lookahead_hours: 3               # a job starts only on GPUs inference did not use yesterday over the next 3 hours
+  policy_search:                   # the learned start/wait policy (lab/train_policy.py), cross-entropy method
+    seed: 7
+    iterations: 6
+    population: 12
+    elite: 3
+    init_std: 1.0
+    min_std: 0.05
+  elastic_sizes: [1]               # GPU counts a job may run on, as multiples of what it asked for, tried in order;
+                                   # [1, 2, 0.5] shards a job wider where it does not fit (design elastic_jobs)
   short_job_hours: 3               # ... unless it is expected to finish within this many hours
 
 placement:
+  policy: greedy                   # greedy | ilp (platform/optimize.py); the study compares both
+  ilp_start_weight: 3.0            # cost of starting a replica, in GPUs (set on development site 21)
   max_replicas_per_service: 64     # last hour's replicas are kept first while they are still needed
 
 expansion:

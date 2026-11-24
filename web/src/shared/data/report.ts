@@ -64,6 +64,18 @@ export interface Split {
   site: { gpus: number; gpu_types: number; services: number; hours: number; profiles: number };
   gates: { platform: Gate[]; platform_pass: boolean };
   samples: Samples | Record<string, never>;
+  placement_policies?: string[];
+  start_policies?: string[];
+  twin?: Twin | null;
+}
+
+export interface Twin {
+  threshold: number;
+  alarm_days_after_change: (number | null)[];
+  twin_error_before: number | null;
+  twin_error_after: number | null;
+  calibrated_error_after: number | null;
+  false_alarm_days: number;
 }
 
 export interface Report {

@@ -45,7 +45,9 @@ Each one has a test or a CI step.
   code 3. CI checks the lock was committed exactly once.
 - Gates were set from the development sites before the held-out run. Never loosen a gate after it. The held-out
   numbers are reported as they came out (ADR 0006).
-- If a change needs new held-out evidence, add new seeds under a new name and record why in an ADR.
+- If a change needs new held-out evidence, add new seeds under a new name and record why in an ADR. The policies
+  of ADR 0007 and 0008 have their own split, `heldout_policies`, behind `reports/heldout_policies.lock` (ADR 0009).
+- The learned start/wait policy trains on `policy_train` seeds only. Test: `tests/test_policies.py`.
 
 ## Data
 

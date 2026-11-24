@@ -1,0 +1,63 @@
+{
+ "weights": [
+  0.06616,
+  1.08497,
+  0.8403,
+  -0.65694,
+  0.0695,
+  0.07445,
+  -0.23097,
+  -0.98491
+ ],
+ "features": [
+  "bias",
+  "hours_left/24",
+  "slack_after_start",
+  "inference_growth_ahead",
+  "stable",
+  "sin_hour",
+  "cos_hour",
+  "gpus/16"
+ ],
+ "trained_on_seeds": [
+  601,
+  602
+ ],
+ "history": [
+  {
+   "iteration": 0,
+   "best": 28.503536030990567,
+   "mean": 19.1728439288578
+  },
+  {
+   "iteration": 1,
+   "best": 28.509619326648092,
+   "mean": 28.41871020028458
+  },
+  {
+   "iteration": 2,
+   "best": 28.82566125197183,
+   "mean": 28.53507731840121
+  },
+  {
+   "iteration": 3,
+   "best": 28.900346631595717,
+   "mean": 28.308192527256043
+  },
+  {
+   "iteration": 4,
+   "best": 29.051884215210173,
+   "mean": 27.871273605736558
+  },
+  {
+   "iteration": 5,
+   "best": 28.93469344107735,
+   "mean": 28.51848804147258
+  }
+ ],
+ "train_score_bn": 28.893833190267937,
+ "baselines_bn": {
+  "look-ahead rule": 27.229808689503002,
+  "any free GPU": 28.503536030990567
+ }
+}

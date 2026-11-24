@@ -1,0 +1,139 @@
+.wrap {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: var(--text-s);
+  cursor: pointer;
+}
+
+.key::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-s);
+  background: var(--tone);
+}
+
+.key[aria-pressed="true"] {
+  color: var(--ink);
+  font-weight: 620;
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.bars {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 15rem 1fr 9ch;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.name {
+  font-size: var(--text-s);
+  color: var(--ink);
+}
+
+.busy {
+  white-space: nowrap;
+  font-size: var(--text-s);
+  color: var(--ink-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  display: flex;
+  gap: 2px;
+  height: 18px;
+}
+
+.seg {
+  display: block;
+  min-width: 2px;
+  background: var(--tone);
+  transform-origin: left center;
+}
+
+.seg:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.seg:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.seg[data-dim] {
+  opacity: 0.25;
+}
+
+[data-tone="serve"] { --tone: var(--svc-1); }
+[data-tone="headroom"] { --tone: color-mix(in srgb, var(--svc-1) 40%, var(--panel)); }
+[data-tone="train"] { --tone: var(--train); }
+[data-tone="lost"] { --tone: var(--bad); }
+[data-tone="waited"] { --tone: var(--svc-4); }
+[data-tone="few"] { --tone: var(--svc-3); }
+[data-tone="nofit"] { --tone: var(--svc-5); }
+[data-tone="idle"] { --tone: var(--rule-strong); }
+
+.twin {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.twin dt {
+  color: var(--ink-2);
+  font-size: var(--text-s);
+}
+
+.twin dd {
+  margin: var(--space-1) 0 0;
+  color: var(--ink);
+  font-size: var(--text-l);
+  font-weight: 680;
+  font-stretch: var(--narrow);
+  font-variant-numeric: tabular-nums;
+}
+
+.twin .warn {
+  color: var(--drift);
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .busy {
+    text-align: left;
+  }
+}

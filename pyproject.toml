@@ -5,7 +5,7 @@ description = "Scheduler and calibrated simulator for mixed GPU fleets: a PyTorc
 requires-python = ">=3.12"
 authors = [{ name = "Manoj Kumar Prakash", email = "manojrevenkar12@gmail.com" }]
 license = { text = "MIT" }
-dependencies = ["numpy>=1.26", "pyyaml>=6", "torch>=2.3"]
+dependencies = ["numpy>=1.26", "pyyaml>=6", "scipy>=1.11", "torch>=2.3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.10", "types-PyYAML"]

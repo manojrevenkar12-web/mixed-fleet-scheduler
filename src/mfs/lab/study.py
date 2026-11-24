@@ -12,7 +12,7 @@ import numpy as np
 
 from .. import config
 from ..sim.designs import run_design
-from ..sim.evaluate import expansion_forecast, model_accuracy, run_metrics
+from ..sim.evaluate import expansion_forecast, model_accuracy, run_metrics, twin_drift
 from ..world.world import build_site
 
 REPORTS = config.REPORTS
@@ -105,6 +105,7 @@ def _seed_job(args: tuple[int, str, bool]) -> dict[str, Any]:
     for name, d in dcfg["designs"].items():
         runs[name] = run_design(site, name, d, cfg, keep_placements=first and name == "platform")
         out["designs"][name] = run_metrics(site, runs[name])
+    out["twin"] = twin_drift(site, runs["platform"])
     out["accuracy"] = model_accuracy(site, cfg)
     out["expansion"] = expansion_forecast(site, cfg)
     out["site"] = {"gpus": sum(site.fleet.values()), "gpu_types": len(site.fleet), "services": len(site.models), "hours": site.hours, "profiles": len(site.profiles())}
@@ -127,6 +128,29 @@ def _mean(rows: list[dict[str, Any]]) -> dict[str, Any]:
             xs = [v for v in vals if v is not None]
             m[k] = float(np.mean(xs)) if xs else None
     return m
+
+
+def _twin_summary(rows: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if not rows:
+        return None
+    fired = [r["alarm_days_after_change"] for r in rows if r.get("drift_gpu")]
+
+    def m(k: str) -> float | None:
+        xs = [r[k] for r in rows if r.get(k) is not None]
+        return float(np.mean(xs)) if xs else None
+
+    return {
+        "threshold": rows[0]["threshold"],
+        "sites": len(rows),
+        "sites_with_driver_change": len(fired),
+        "alarms_fired": sum(1 for f in fired if f is not None),
+        "alarm_days_after_change": [f for f in fired],
+        "twin_error_before": m("twin_error_before"),
+        "twin_error_after": m("twin_error_after"),
+        "calibrated_error_after": m("calibrated_error_after"),
+        "false_alarm_days": sum(r["false_alarm_days"] for r in rows),
+        "first_site": {"drift_gpu": rows[0].get("drift_gpu"), "daily_twin_error": rows[0]["daily_twin_error"], "daily_calibrated_error": rows[0]["daily_calibrated_error"]},
+    }
 
 
 def check_gates(res: dict[str, Any], g: dict[str, Any]) -> dict[str, Any]:
@@ -153,7 +177,7 @@ def check_gates(res: dict[str, Any], g: dict[str, Any]) -> dict[str, Any]:
 
 def run_split(split: str, workers: int = 3) -> dict[str, Any]:
     seeds: list[int] = config.seeds()[split]
-    variant = "heldout" if split == "heldout" else "dev"
+    variant = "heldout" if split.startswith("heldout") else "dev"
     jobs = [(s, variant, i == 0) for i, s in enumerate(seeds)]
     if workers > 1:
         with ProcessPoolExecutor(max_workers=min(workers, len(jobs))) as ex:
@@ -175,6 +199,9 @@ def run_split(split: str, workers: int = 3) -> dict[str, Any]:
         "site": per_seed[0]["site"],
         "per_seed": [{"seed": s["seed"], **{n: s["designs"][n]["attainment"] for n in dcfg["main"]}} for s in per_seed],
         "samples": per_seed[0].get("samples", {}),
+        "placement_policies": dcfg.get("placement_policies", []),
+        "start_policies": dcfg.get("start_policies", []),
+        "twin": _twin_summary([s["twin"] for s in per_seed if s.get("twin")]),
     }
     ex = res["expansion"]["per_seed"]
     res["expansion"]["mean_abs_error"] = {k: float(np.mean([abs(e["estimators"][k]["error"]) for e in ex if e["estimators"][k]["error"] is not None])) for k in ex[0]["estimators"]}
@@ -189,11 +216,12 @@ def write(split: str, res: dict[str, Any]) -> Path:
     return path
 
 
-def run_heldout_once(workers: int = 3) -> dict[str, Any]:
-    if LOCK.exists():
-        raise HeldOutLocked(f"{LOCK} exists: the held-out sites have been run. Add new seeds under a new name and an ADR.")
+def run_heldout_once(workers: int = 3, split: str = "heldout") -> dict[str, Any]:
+    lock = LOCK if split == "heldout" else REPORTS / f"{split}.lock"
+    if lock.exists():
+        raise HeldOutLocked(f"{lock} exists: these held-out sites have been run. Add new seeds under a new name and an ADR.")
     REPORTS.mkdir(exist_ok=True)
-    LOCK.write_text(json.dumps({"seeds": config.seeds()["heldout"], "config_sha256": config_hash()}, indent=1) + "\n", encoding="utf-8")
-    res = run_split("heldout", workers)
-    write("heldout", res)
+    lock.write_text(json.dumps({"seeds": config.seeds()[split], "config_sha256": config_hash()}, indent=1) + "\n", encoding="utf-8")
+    res = run_split(split, workers)
+    write(split, res)
     return res
